@@ -1,0 +1,134 @@
+
+{
+    "timeline":
+    {
+        "headline":"Bits To Berlin",
+        "type":"default",
+		"text":"<p class=\"test-layout\">Woooo</p>",
+		"startDate":"2013,9,8",
+        "date": [
+            {
+                "startDate":"2013,9,8",
+				"endDate":"2013,9,20",
+                "headline":"Yerevan, Armenia",
+                "text":"<div class=\"test-layout\">Woooo</p>",
+                "asset":
+                {
+                    "media":"/images/image.jpg",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,9,20",
+                "endDate":"2013,9,23",
+                "headline":"Kiev, Ukraine",
+                "text":"<p>Woooo</p>",
+                "asset":
+                {
+                    "media":"https://vine.co/v/b55LOA1dgJU",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,9,23",
+                "endDate":"2013,9,27",
+                "headline":"Minsk, Belarus",
+                "text":"<p>Woooo</p>",
+                "asset":
+                {
+                    "media":"https://vine.co/v/b55LOA1dgJU",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,9,27",
+                "endDate":"2013,10,3",
+                "headline":"Moscow, Russia",
+                "text":"<p>Woooo</p>",
+                "asset":
+                {
+                    "media":"https://vine.co/v/b55LOA1dgJU",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,10,3",
+                "endDate":"2013,10,5",
+                "headline":"St Petersburg, Russia",
+                "text":"<p>Woooo</p>",
+                "asset":
+                {
+                    "media":"https://vine.co/v/b55LOA1dgJU",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,10,5",
+                "endDate":"2013,10,6",
+                "headline":"Helsinki, Finland",
+                "text":"<p>Woooo</p>",
+                "asset":
+                {
+                    "media":"https://vine.co/v/b55LOA1dgJU",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,10,6",
+                "endDate":"2013,10,8",
+                "headline":"Tallinn, Estonia",
+                "text":"<p>Woooo</p>",
+                "asset":
+                {
+                    "media":"https://vine.co/v/b55LOA1dgJU",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,10,8",
+                "endDate":"2013,10,10",
+                "headline":"Riga, Latvia",
+                "text":"<p>Woooo</p>",
+                "asset":
+                {
+                    "media":"https://vine.co/v/b55LOA1dgJU",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,10,10",
+                "endDate":"2013,10,12",
+                "headline":"Vilnius, Lithuania",
+                "text":"<p>Woooo</p>",
+                "asset":
+                {
+                    "media":"https://vine.co/v/b55LOA1dgJU",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,10,12",
+                "endDate":"2013,10,15",
+                "headline":"Bucharest, Romania",
+                "text":"<p>Woooo</p>",
+                "asset":
+                {
+                    "media":"https://vine.co/v/b55LOA1dgJU",
+                    "credit":"",
+                    "caption":""
+                }
+            }
+
+
+        ]
+    }
+}
