@@ -8,6 +8,7 @@ body {
 
 .navbar{
 	background-color: #000000;
+	border-bottom: 1px solid #ffcc00 !important;
 }
 
 .navbar-nav {
@@ -95,17 +96,25 @@ body {
 	/*border-right: 5px solid;*/
 }
 
-div.navbar-collapse.collapse {
-	background-color: #000000;
-}
 
-div.navbar.navbar-default.navbar-fixed-top {
-	border-bottom-color: #001c33;
+.navbar-default .navbar-toggle{
+	  border-radius: 0px;
+	border-color: #ffcc00 !important;
+}
+.navbar-default .navbar-toggle span{
+	background-color: #ffcc00 !important;
 }
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #efefef;
+	border-color: #fa0000 !important;
+	background-color: #ffcc00 !important;
+}
+
+
+.navbar-default .navbar-toggle:hover span,
+.navbar-default .navbar-toggle:focus span {
+	background-color: #fa0000 !important;
 }
 
 
@@ -144,6 +153,7 @@ div.navbar.navbar-default.navbar-fixed-top {
   color: #ffffff;
   background-color: #ff6600;
   border-color: #ff6600;
+  border-radius: 0px;
 }
 
 .hero .btn-primary:hover,
@@ -151,8 +161,8 @@ div.navbar.navbar-default.navbar-fixed-top {
 .hero .btn-primary:active,
 .hero .btn-primary.active{
   color: #ffffff;
-  background-color: #0070d2;
-  border-color: #285e8e;
+  background-color: #ee5e02;
+  border-color: #b64602;
 }
 
 .btn-primary:active,
@@ -334,7 +344,10 @@ a:hover{
 
 
 footer {
+	border-top: 1px solid #ffcc00 !important;
 	height: 150px;
+	float: left;
+	width: 100%;
 	
 }
 footer div{
