@@ -9,9 +9,30 @@ body {
 .navbar{
 	background-color: #000000;
 }
-.navbar-nav li a{
-	color: #ffffff !important;
+
+.navbar-nav {
+	float: right;
 }
+
+@media (max-width: 768px) {
+	.navbar-nav {
+		float: left;
+	}
+}
+
+.navbar-nav li a{
+	color: #5c5242 !important;
+	text-transform: lowercase;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+.navbar-nav li a:hover{
+	color: #29241c !important;
+}
+
+
 .navbar-brand{
 	text-indent: 9999em;
 	width: 100px;
@@ -19,6 +40,13 @@ body {
 	background: url(../images/logo.png) no-repeat center;
 	background-size: 100px auto;
 	padding-left: 100px;
+	padding-right: 50px;
+	border-right: #5c5242 solid 5px;
+	background-color: #000000;
+}
+
+div.navbar-collapse.collapse {
+	background-color: #c3b9a0;
 }
 
 div.navbar.navbar-default.navbar-fixed-top {
@@ -49,11 +77,33 @@ div.navbar.navbar-default.navbar-fixed-top {
 .hero div{
 	width: 45%;
 	padding: 25px;
-	padding-top: 10px;
-	background-color: rgba(239,239,239,0.87);
+	padding-top: 0px;
+	background-color: #ff6c28;
 	position: absolute;
 	top: 100px;
-	left: 10%;	
+	left: 10%;
+	color: #ffffff;	
+}
+
+.hero .btn-primary {
+  color: #ffffff;
+  background-color: #0082ee;
+  border-color: #005fb4;
+}
+
+.hero .btn-primary:hover,
+.hero .btn-primary:focus,
+.hero .btn-primary:active,
+.hero .btn-primary.active{
+  color: #ffffff;
+  background-color: #0070d2;
+  border-color: #285e8e;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-image: none;
 }
 
 @media (max-width: 768px) {
@@ -63,6 +113,7 @@ div.navbar.navbar-default.navbar-fixed-top {
 		position: relative;
 		top: 100px;
 		left: auto;
+		padding-top: 5px;
 	}	
 }
 
