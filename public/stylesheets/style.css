@@ -54,31 +54,41 @@ body {
 	color: #29241c !important;
 }
 
+
+.navbar-nav li a[href="#news"]{
+	background-color: #f0e1a5 !important;
+	color: #5a2b1b !important;
+}
+
+.navbar-nav li a[href="#news"]:hover{
+	background-color: #ff6600 !important;
+}
+
 .navbar-nav li a[href="#about"]{
-	background-color: #004480 !important;
-	color: #efefef !important;
+	background-color: #55a041 !important;
+	color: #94cc00 !important;
 }
 
 .navbar-nav li a[href="#about"]:hover{
+	background-color: #104016 !important;
+}
+
+.navbar-nav li a[href="#featured"]{
+	background-color: #004480 !important;
+	color: #95d6ff !important;
+}
+
+.navbar-nav li a[href="#featured"]:hover{
 	background-color: #003d74 !important;
-}
-
-.navbar-nav li a[href="#explore"]{
-	background-color: #c3b9a0 !important;
-}
-
-.navbar-nav li a[href="#explore"]:hover{
-	background-color: #9f9783 !important;
 }
 
 .navbar-nav li a[href="#contribute"]{
 	background-color: #5a2b1b !important;
-	color: #efefef !important;
+	color: #e0b25b !important;
 }
 
 .navbar-nav li a[href="#contribute"]:hover{
 	background-color: #c05838 !important;
-	color: #efefef !important;
 }
 
 
@@ -214,12 +224,17 @@ body {
 	padding-bottom: 5px;
 }
 
-#explore{
-	background: #c3b9a0;	
+#featured{
+	/*background: #94cc00;*/	
+	background: #004480;
+}
+
+#news{
+	background-color: #f0e1a5;
 }
 
 #about{
-	background-color: #004480;
+	background-color: #55a041;
 	color: #efefef;
 	padding-top: 20px;
 	border-bottom: none;
@@ -229,24 +244,19 @@ body {
 	background: #5a2b1b;	
 }
 
-#about h1{
-	background-color: #004480;
-	color: #efefef;
-}
 
-
-
-#explore h1{
+#featured h1{
 	margin: 0px;
 	text-indent: 6.7%;
 	width: 100%;
 	line-height: 50px;
 	margin-top: -15px;
 	margin-bottom: -15px;
+	color: #0082ee;
 
 }
 
-#explore ul{
+#featured ul{
 	list-style: none;
 	padding: 0px;
 	width: 90%;
@@ -254,7 +264,7 @@ body {
 	margin-top: 20px;
 }
 
-#explore ul li{
+#featured ul li{
 	float: left;
 	width: 30%;
 	overflow: hidden;	
@@ -262,36 +272,53 @@ body {
 	height: 380px;
 	margin-bottom: 20px;
 }
-#explore ul li span{
-	background-color: #efefef;
+#featured ul li span{
+	background-color: #000;
 	display: block;
 	padding: 5px;
 	height: 200px;
 }
-#explore ul li span h2{
+#featured ul li span h2{
 	margin: 0px;
 	padding: 3px;
 	font-size: 15px;
-	color: #5c5242;
+	color: #ffcc00;
 }
 
-#explore ul li span h5{
+#featured ul li span h5{
 	margin: 0px;
 	padding: 3px;
 	font-size: 12px;
-	color: #6c6459;
+	color: #ffcc00;
 }
 
-#explore ul li span p{
+#featured ul li span p{
 	margin: 0px;
 	padding: 3px;
 	font-size: 12px;
-	color: #6c6459;
+	color: #ffcc00;
 }
 
-#explore ul li img{
+#featured ul li img{
 	width: 100%;
 }
+
+
+#about{	
+	color: #000000;
+}
+
+#about h1{	
+	color: #94cc00;
+}
+
+#about a{
+	color: #ffcc00;
+}
+#about a:hover{
+	color: #fff;
+}
+
 
 a{
 	color: #c05838;
@@ -303,7 +330,7 @@ a:hover{
 
 @media (max-width: 768px) {
 
-	#explore ul{
+	#featured ul{
 	list-style: none;
 	padding: 0px;
 	width: 90%;
@@ -312,7 +339,7 @@ a:hover{
 	
 }
 
-#explore ul li{
+#featured ul li{
 	float: left;
 	width: 100%;
 	overflow: hidden;	
@@ -320,7 +347,7 @@ a:hover{
 	height: 350px;
 	margin-bottom: 20px;
 }
-	#explore h1{
+	#featured h1{
 		text-indent: 5.5%;
 	}
 }
