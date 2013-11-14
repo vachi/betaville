@@ -231,6 +231,44 @@ body {
 }
 
 
+
+
+#recent-buttons{
+	height: 35px;
+	position: relative;
+	display: block;
+	width: 435px;
+	margin-top: -45px;
+	left: 100px;
+}
+
+#recent-buttons .btn-primary {
+  color: #ffffff;
+  background-color: #0082ee;
+  border-color: #0082ee;
+  border-radius: 0px;
+}
+
+#recent-buttons .btn-primary:hover,
+#recent-buttons .btn-primary:focus,
+#recent-buttons .btn-primary:active,
+#recent-buttons .btn-primary.active{
+  color: #ffffff;
+  background-color: #006db7;
+  border-color: #0082ee;
+}
+
+#recent-buttons .btn-primary:active,
+#recent-buttons .btn-primary.active,
+#recent-buttons .open .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+
+#recent-buttons a.middle{
+	border-left: 1px solid #004480 !important;	
+}
+
+
 @media (max-width: 768px) {
 	.hero div{
 		width: 80%;
@@ -278,6 +316,7 @@ body {
 #recent{
 	/*background: #94cc00;*/	
 	background: #004480;
+	position: relative;
 }
 
 #news{

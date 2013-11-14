@@ -37,7 +37,12 @@ block content
     a(class="twitter-timeline", href="http://twitter.com/betavillenews", data-widget-id="400389577090691072", data-chrome="noheader nofooter transparent", data-link-color="#ff6600", data-border-color="#ff6600", data-tweet-limit="6")
     a(href="https://twitter.com/betavillenews") read more tweets 
   div(id="recent", class="meat") 
-    h1 Recent Activity | &#187; view all users | &#187; view all projects 
+    h1 Recent Activity
+
+    span(id="recent-buttons", class="blueButtons")
+        a(class="btn btn-primary btn-large", href="http://betaville.net/users.php") browse users
+        a(class="btn btn-primary btn-large middle", href="http://betaville.net/projects.php") browse projects        
+
     ul(class="clearfix")
       li 
         img(src="http://storage.betaville.net/designthumbs/514.png")
@@ -84,6 +89,9 @@ block content
     a(href="./projects") View More
 
   div(id="about", class="meat") 
+
+    iframe(src="//player.vimeo.com/video/37300439?title=0&amp;byline=0&amp;portrait=0&amp;color=94cc00", width="500", height="281", frameborder="0", webkitallowfullscreen, mozallowfullscreen, allowfullscreen)
+
     h1 What is Betaville?
     p <strong>Betaville</strong> is an open-source multiplayer environment for real cities, in which ideas for new works of public art, architecture, urban design, and development can be shared, discussed, tweaked, and brought to maturity in context, and with the kind of broad participation people take for granted in open source software development.
 
