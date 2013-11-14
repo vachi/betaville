@@ -159,29 +159,65 @@ body {
 	color: rgba(115,160,2,0.83);	
 }
 
-.hero span .btn-primary {
+.hero span#login .btn-primary {
+  color: #ffffff;
+  background-color: #0082ee;
+  border-color: #0082ee;
+  border-radius: 0px;
+}
+
+.hero span#login .btn-primary:hover,
+.hero span#login .btn-primary:focus,
+.hero span#login .btn-primary:active,
+.hero span#login .btn-primary.active{
+  color: #ffffff;
+  background-color: #006db7;
+  border-color: #0082ee;
+}
+
+.hero span#login .btn-primary:active,
+.hero span#login .btn-primary.active,
+.hero span#login .open .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+
+.hero span#login{
+	height: 35px;
+	position: relative;
+	display: block;
+	width: 235px;
+	float: left;
+}
+
+.hero span#login a.register{
+	border-left: 1px solid #004480 !important;	
+}
+
+
+
+.hero span#download .btn-primary {
   color: #ffffff;
   background-color: #ff6600;
   border-color: #ff6600;
   border-radius: 0px;
 }
 
-.hero .btn-primary:hover,
-.hero .btn-primary:focus,
-.hero .btn-primary:active,
-.hero .btn-primary.active{
+.hero span#download .btn-primary:hover,
+.hero span#download .btn-primary:focus,
+.hero span#download .btn-primary:active,
+.hero span#download .btn-primary.active{
   color: #ffffff;
   background-color: #ee5e02;
   border-color: #b64602;
 }
 
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
+.hero span#download .btn-primary:active,
+.hero span#download .btn-primary.active,
+.hero span#download .open .dropdown-toggle.btn-primary {
   background-image: none;
 }
 
-.hero span{
+.hero span#download{
 	height: 35px;
 	position: relative;
 	display: block;
@@ -189,28 +225,10 @@ body {
 	float: right;
 }
 
-.hero span a.mac{
+.hero span#download a.mac{
 	border-right: 1px solid #b64602 !important;
 	border-left: 1px solid #b64602 !important;
 }
-
-/*.hero span .web{
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.hero span .mac{
-	position: absolute;
-	left: 38%;
-}
-
-.hero span .src{
-	position: absolute;
-	right: 0;
-}*/
-
-
 
 
 @media (max-width: 768px) {
@@ -222,29 +240,7 @@ body {
 		left: auto;
 		padding-top: 5px;
 	}	
-	
-	/*.hero span{
-	width: 100%;
-	height: 35px;
-	position: relative;
-	display: block;
-	}
-	.hero span .web{
-		position: absolute;
-		left: 3%;
-		top: 0px;
-	left: 0;
-}
-	
-	.hero span .mac{
-		position: absolute;
-		left: 38%;
-	}
-	
-	.hero span .src{
-		position: absolute;
-		right: 0;
-	}*/
+
 }
 
 .meat {
