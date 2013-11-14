@@ -73,12 +73,12 @@ body {
 	background-color: #104016 !important;
 }
 
-.navbar-nav li a[href="#featured"]{
+.navbar-nav li a[href="#recent"]{
 	background-color: #004480 !important;
 	color: #95d6ff !important;
 }
 
-.navbar-nav li a[href="#featured"]:hover{
+.navbar-nav li a[href="#recent"]:hover{
 	background-color: #003d74 !important;
 }
 
@@ -279,7 +279,7 @@ body {
 	padding-bottom: 5px;
 }
 
-#featured{
+#recent{
 	/*background: #94cc00;*/	
 	background: #004480;
 }
@@ -300,7 +300,7 @@ body {
 }
 
 
-#featured h1{
+#recent h1{
 	margin: 0px;
 	text-indent: 6.7%;
 	width: 100%;
@@ -311,7 +311,7 @@ body {
 
 }
 
-#featured ul{
+#recent ul{
 	list-style: none;
 	padding: 0px;
 	width: 90%;
@@ -319,7 +319,7 @@ body {
 	margin-top: 20px;
 }
 
-#featured ul li{
+#recent ul li{
 	float: left;
 	width: 30%;
 	overflow: hidden;	
@@ -327,34 +327,34 @@ body {
 	height: 380px;
 	margin-bottom: 20px;
 }
-#featured ul li span{
+#recent ul li span{
 	background-color: #000;
 	display: block;
 	padding: 5px;
 	height: 200px;
 }
-#featured ul li span h2{
+#recent ul li span h2{
 	margin: 0px;
 	padding: 3px;
 	font-size: 15px;
 	color: #ffcc00;
 }
 
-#featured ul li span h5{
+#recent ul li span h5{
 	margin: 0px;
 	padding: 3px;
 	font-size: 12px;
 	color: #ffcc00;
 }
 
-#featured ul li span p{
+#recent ul li span p{
 	margin: 0px;
 	padding: 3px;
 	font-size: 12px;
 	color: #ffcc00;
 }
 
-#featured ul li img{
+#recent ul li img{
 	width: 100%;
 }
 
@@ -385,7 +385,7 @@ a:hover{
 
 @media (max-width: 768px) {
 
-	#featured ul{
+	#recent ul{
 	list-style: none;
 	padding: 0px;
 	width: 90%;
@@ -394,7 +394,7 @@ a:hover{
 	
 }
 
-#featured ul li{
+#recent ul li{
 	float: left;
 	width: 100%;
 	overflow: hidden;	
@@ -402,7 +402,7 @@ a:hover{
 	height: 350px;
 	margin-bottom: 20px;
 }
-	#featured h1{
+	#recent h1{
 		text-indent: 5.5%;
 	}
 }
