@@ -1,7 +1,6 @@
 /* @override http://localhost:5000/stylesheets/style.css */
 
 body {
-	min-height: 2000px;
 	padding-top: 53px;
 	background-color: #000000;
 }
@@ -55,39 +54,39 @@ body {
 }
 
 
-.navbar-nav li a[href="#news"]{
+.navbar-nav li a[href*="#news"]{
 	background-color: #f0e1a5 !important;
 	color: #5a2b1b !important;
 }
 
-.navbar-nav li a[href="#news"]:hover{
+.navbar-nav li a[href*="#news"]:hover{
 	background-color: #ff6600 !important;
 }
 
-.navbar-nav li a[href="#about"]{
+.navbar-nav li a[href*="#about"]{
 	background-color: #55a041 !important;
 	color: #94cc00 !important;
 }
 
-.navbar-nav li a[href="#about"]:hover{
+.navbar-nav li a[href*="#about"]:hover{
 	background-color: #104016 !important;
 }
 
-.navbar-nav li a[href="#recent"]{
+.navbar-nav li a[href*="#recent"]{
 	background-color: #004480 !important;
 	color: #95d6ff !important;
 }
 
-.navbar-nav li a[href="#recent"]:hover{
+.navbar-nav li a[href*="#recent"]:hover{
 	background-color: #003d74 !important;
 }
 
-.navbar-nav li a[href="#contribute"]{
+.navbar-nav li a[href*="#contribute"]{
 	background-color: #5a2b1b !important;
 	color: #e0b25b !important;
 }
 
-.navbar-nav li a[href="#contribute"]:hover{
+.navbar-nav li a[href*="#contribute"]:hover{
 	background-color: #c05838 !important;
 }
 
@@ -459,6 +458,11 @@ a:hover{
 	color: #ffcc00 !important;
 }
 
+
+#project{
+	background-color: #efefef
+
+}
 
 footer {
 	border-top: 1px solid #ffcc00 !important;
