@@ -494,7 +494,11 @@ footer{
 	border-bottom: none;
 	margin-bottom: 0px;
 }
-
+footer span{
+	color: #c05838;	
+	margin-left: 3px;
+		margin-right: 3px;
+}
 
 
 #contribute span#download .btn-primary {
@@ -611,3 +615,34 @@ footer{
 	margin-bottom: 10px;
 }
 
+#contact{
+	background-color: #efefef;
+}
+
+#contact h1{
+	margin-bottom: 10px;
+}
+
+#contact h4{
+	margin-bottom: 10px;
+}
+
+
+
+
+#login{
+	background-color: #efefef;
+}
+
+#login img{
+	width: 40%;
+	margin-bottom: 20px;
+}
+
+#login h1{
+	margin-bottom: 10px;
+}
+
+#login h4{
+	margin-bottom: 10px;
+}

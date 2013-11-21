@@ -29,6 +29,8 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/project/:id', routes.project);
 app.get('/projects', routes.projects);
+app.get('/login', routes.login);
+app.get('/contact', routes.contact);
 
 
 app.get('/blog', routes.blog);

@@ -10,6 +10,8 @@
         });
     });
 
+var imgsE = "this.onerror=null;this.src='/images/sorry.gif'";
+
 $(function(){  
         $('#recent ul').ready( function(){
             $.ajax({ 
@@ -17,9 +19,10 @@ $(function(){
                 data: 'section=activity&request=proposals&quantity=6', 
                 dataType: 'json', 
                 success: function(data) 
-                {
+                {   
                     _.each(data.designs,function (val, key) {        
-                        $("#recent ul").append('<li><a href="./project/'+val.designID+'"><img src="http://storage.betaville.net/designthumbs/'+val.designID+'.png"><span> <h2>'+val.name+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5><h5>id: <b>'+val.designID+'</b></h5><p>'+val.description+'</p></span></a></li>');
+                        
+                        $("#recent ul").append('<li><a href="./project/'+val.designID+'"><img src="http://storage.betaville.net/designthumbs/'+val.designID+'.png" onError="'+imgsE+';" /><span> <h2>'+val.name+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5><h5>id: <b>'+val.designID+'</b></h5><p>'+val.description+'</p></span></a></li>');
                     });
                 }
             });
@@ -46,7 +49,7 @@ $(function(){
                     <p>'+data.design.description+'</p>\
                     </div>\
                     <div class="right">\
-                    <img src="http://storage.betaville.net/designthumbs/'+data.design.designID+'.png"><div id="map" style="width: 400px; height: 300px"></div><script type="text/javascript">var myOptions = {zoom: 8,center: new google.maps.LatLng('+(data.design.coordinate.lat)+', '+(data.design.coordinate.lon)+'),mapTypeId: google.maps.MapTypeId.ROADMAP};var map = new google.maps.Map(document.getElementById("map"), myOptions);</script> </div>');                
+                    <img src="http://storage.betaville.net/designthumbs/'+data.design.designID+'.png"  onError="'+imgsE+';" /><div id="map" style="width: 400px; height: 300px"></div><script type="text/javascript">var myOptions = {zoom: 8,center: new google.maps.LatLng('+(data.design.coordinate.lat)+', '+(data.design.coordinate.lon)+'),mapTypeId: google.maps.MapTypeId.ROADMAP};var map = new google.maps.Map(document.getElementById("map"), myOptions);</script> </div>');                
             }
         });
     });
@@ -63,7 +66,7 @@ $(function(){
             {                        
                 console.log(data);
                 _.each(data.designs,function (val, key) {                
-                    $("#projects ul").append('<li><a class="clearfix" href="./project/'+val.designID+'"><img src="http://storage.betaville.net/designthumbs/'+val.designID+'.png"><span> <h2>'+val.name+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5><h5>id: <b>'+val.designID+'</b></h5><p>'+val.description+'</p></span></a></li>');
+                    $("#projects ul").append('<li><a class="clearfix" href="./project/'+val.designID+'"><img src="http://storage.betaville.net/designthumbs/'+val.designID+'.png" onError="'+imgsE+';" /><span> <h2>'+val.name+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5><h5>id: <b>'+val.designID+'</b></h5><p>'+val.description+'</p></span></a></li>');
                 });
             }
         });

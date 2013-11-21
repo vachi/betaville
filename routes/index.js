@@ -18,3 +18,17 @@ exports.projects = function(req, res){
   res.render('projects', {   	
   });
 };
+
+
+exports.contact = function(req, res){
+  res.render('contact', {   	
+  });
+};
+
+
+exports.login = function(req, res){
+  res.render('login', {   	
+  });
+};
+
+
