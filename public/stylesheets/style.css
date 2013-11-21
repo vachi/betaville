@@ -522,3 +522,81 @@ footer{
 }
 
 
+#projects{
+	background-color: #efefef;
+}
+
+#projects > *{
+	width: 90%;
+	margin: 0 auto;
+}
+
+#projects ul{
+	list-style: none;
+	padding: 0px;
+	margin-top: 20px;
+}
+
+#projects li{
+	height: 200px;
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+#projects li:hover{
+	background-color: #e5e4e7;
+}
+
+#projects li img{
+	float: left;
+	margin-right: 20px;
+	height: 200px;
+	min-width: 300px;	
+}
+
+#projects li h2{
+	margin-top: 10px;
+}
+
+#projects li span{
+	float: left;
+}
+
+#projects li a:hover{
+	text-decoration: none;
+	color: #ff6600;
+}
+
+#projects li h5{
+	font-weight: 300;
+}
+
+
+#project{
+	background-color: #efefef;
+}
+
+#project > *{
+	width: 90%;
+	margin: 0 auto;
+}
+
+#project .left{
+	width: 50%;
+	float: left;
+	margin-left: 10%;
+}
+
+#project .right{
+	width: 30%;
+	margin-left: 2%;
+	float: left;
+	overflow: hidden;
+}
+
+
+#project .right img{
+	width: 100%;
+	margin-bottom: 10px;
+}
+
