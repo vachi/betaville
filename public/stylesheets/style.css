@@ -630,19 +630,19 @@ footer span{
 
 
 
-#login{
+#login.meat{
 	background-color: #efefef;
 }
 
-#login img{
+#login.meat img{
 	width: 40%;
 	margin-bottom: 20px;
 }
 
-#login h1{
+#login.meat h1{
 	margin-bottom: 10px;
 }
 
-#login h4{
+#login.meat h4{
 	margin-bottom: 10px;
 }
