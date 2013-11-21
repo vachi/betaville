@@ -361,6 +361,11 @@ body {
 	height: 380px;
 	margin-bottom: 20px;
 }
+
+
+#recent ul li a:hover{
+	text-decoration: none;
+}
 #recent ul li span{
 	background-color: #000;
 	display: block;
@@ -388,8 +393,14 @@ body {
 	color: #ffcc00;
 }
 
+#recent ul li:hover a span{
+	background-color: #29292a;
+}
+
+
 #recent ul li img{
 	width: 100%;
+	max-height: 60%;
 }
 
 
