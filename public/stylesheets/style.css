@@ -60,7 +60,7 @@ body {
 }
 
 .navbar-nav li a[href*="#news"]:hover{
-	background-color: #ff6600 !important;
+	background-color: #ffcc00 !important;
 }
 
 .navbar-nav li a[href*="#about"]{
@@ -69,25 +69,25 @@ body {
 }
 
 .navbar-nav li a[href*="#about"]:hover{
-	background-color: #104016 !important;
+	background-color: #006600 !important;
 }
 
 .navbar-nav li a[href*="#recent"]{
-	background-color: #004480 !important;
+	background-color: #00469f !important;
 	color: #95d6ff !important;
 }
 
 .navbar-nav li a[href*="#recent"]:hover{
-	background-color: #003d74 !important;
+	background-color: #0082ee !important;
 }
 
-.navbar-nav li a[href*="#contribute"]{
-	background-color: #5a2b1b !important;
+.navbar-nav li a[href*="#participate"]{
+	background-color: #c05838 !important;
 	color: #e0b25b !important;
 }
 
-.navbar-nav li a[href*="#contribute"]:hover{
-	background-color: #c05838 !important;
+.navbar-nav li a[href*="#participate"]:hover{
+	background-color: #ff6600 !important;
 }
 
 
@@ -329,7 +329,7 @@ body {
 	border-bottom: none;
 }
 
-#contribute{
+#participate{
 	background: #5a2b1b;	
 }
 
@@ -452,20 +452,20 @@ a:hover{
 	}
 }
 
-#contribute{
+#participate{
 	color: #e0b25b;
 }
-#contribute h1{
+#participate h1{
 	border: none;
 	background: #5a2b1b;
 	color: #e0b25b;
 }
 
-#contribute a{
+#participate a{
 	color: #ff6600 !important;
 }
 
-#contribute a:hover{
+#participate a:hover{
 	color: #ffcc00 !important;
 }
 
@@ -501,29 +501,29 @@ footer span{
 }
 
 
-#contribute span#download .btn-primary {
+#participate span#download .btn-primary {
   color: #ffffff !important;
   background-color: #ff6600;
   border-color: #ff6600;
   border-radius: 0px;
 }
 
-#contribute span#download .btn-primary:hover,
-#contribute span#download .btn-primary:focus,
-#contribute span#download .btn-primary:active,
-#contribute span#download .btn-primary.active{
+#participate span#download .btn-primary:hover,
+#participate span#download .btn-primary:focus,
+#participate span#download .btn-primary:active,
+#participate span#download .btn-primary.active{
   color: #ffffff;
   background-color: #ee5e02;
   border-color: #b64602;
 }
 
-#contribute span#download .btn-primary:active,
-#contribute span#download .btn-primary.active,
-#contribute span#download .open .dropdown-toggle.btn-primary {
+#participate span#download .btn-primary:active,
+#participate span#download .btn-primary.active,
+#participate span#download .open .dropdown-toggle.btn-primary {
   background-image: none;
 }
 
-#contribute span#download{
+#participate span#download{
 	height: 35px;
 	position: relative;
 	display: block;
@@ -531,7 +531,7 @@ footer span{
 	margin-top: 10px;
 }
 
-#contribute span#download a.mac{
+#participate span#download a.mac{
 	border-right: 1px solid #b64602 !important;
 	border-left: 1px solid #b64602 !important;
 }
