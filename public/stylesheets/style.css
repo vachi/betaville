@@ -5,6 +5,17 @@ body {
 	background-color: #000000;
 }
 
+a{
+	color: #c05838;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+
+/*  navbar  */
+
 .navbar{
 	background-color: #000000;
 	border-bottom: 1px solid #ffcc00 !important;
@@ -13,7 +24,6 @@ body {
 .navbar-nav {
 	float: right;
 }
-
 
 .navbar-collapse {
   max-height: 340px;
@@ -26,8 +36,6 @@ body {
   border: none;
   background-color: none;
 }
-
-
 
 @media (max-width: 768px) {
 	.navbar-nav {
@@ -56,41 +64,43 @@ body {
 
 .navbar-nav li a[href*="#news"]{
 	background-color: #f0e1a5 !important;
-	color: #5a2b1b !important;
+	color: #928878 !important;
 }
 
 .navbar-nav li a[href*="#news"]:hover{
+	color: #c05838 !important;
 	background-color: #ffcc00 !important;
 }
 
 .navbar-nav li a[href*="#about"]{
 	background-color: #55a041 !important;
-	color: #94cc00 !important;
+	color: #006600 !important;
 }
 
 .navbar-nav li a[href*="#about"]:hover{
 	background-color: #006600 !important;
+	color: #94cc00 !important;
 }
 
 .navbar-nav li a[href*="#recent"]{
 	background-color: #00469f !important;
-	color: #95d6ff !important;
+	color: #0082ee !important;
 }
 
 .navbar-nav li a[href*="#recent"]:hover{
 	background-color: #0082ee !important;
+	color: #95d6ff !important;
 }
 
 .navbar-nav li a[href*="#participate"]{
 	background-color: #c05838 !important;
-	color: #e0b25b !important;
+	color: #773924 !important;
 }
 
 .navbar-nav li a[href*="#participate"]:hover{
 	background-color: #ff6600 !important;
+	color: #ffcc00 !important;
 }
-
-
 
 .navbar-brand{
 	text-indent: 9999em;
@@ -104,8 +114,6 @@ body {
 	background-color: #000000;
 	/*border-right: 5px solid;*/
 }
-
-
 .navbar-default .navbar-toggle{
 	  border-radius: 0px;
 	border-color: #ffcc00 !important;
@@ -126,21 +134,19 @@ body {
 	background-color: #fa0000 !important;
 }
 
-
-
+/*---- hero ---- */
 
 .hero {
 	width: 100%;	
-	height: 600px;
-	
-	  background: url(../images/hero.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  overflow: hidden;
-  word-wrap: break-word;
-  position: relative;
+	height: 600px;	
+	background: url(../images/hero.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
+	word-wrap: break-word;
+	position: relative;
 }
 
 .hero div{
@@ -192,8 +198,6 @@ body {
 	border-left: 1px solid #004480 !important;	
 }
 
-
-
 .hero span#download .btn-primary {
   color: #ffffff;
   background-color: #ff6600;
@@ -230,7 +234,102 @@ body {
 }
 
 
+@media (max-width: 768px) {
+	.hero div{
+		width: 80%;
+		margin: 0 auto;
+		position: relative;
+		top: 100px;
+		left: auto;
+		padding-top: 5px;
+	}	
 
+}
+
+/* meat --  the general section config */
+.meat {
+	width: 100%;
+	min-height: 300px;
+	float: left;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.meat > *{
+	width: 60%;
+	margin: 0 20%;
+}
+
+.meat p{
+	margin-bottom: 10px;
+	margin-top: 10px;
+	line-height: 20px;
+}
+
+@media (max-width: 768px) {
+	.meat > *{
+		width: 90%;
+		margin: 0 5%;
+	}
+}
+
+.meat h1{
+	text-align: left;
+	margin-top: 10px;
+	padding-bottom: 5px;
+}
+
+/* --- news --- */
+#news{
+	background-color: #f0e1a5;
+}
+
+#news h1{
+	color: #928878;
+}
+
+#news a{
+	color: #ff6600;
+}
+
+/* --- about --- */
+
+#about{
+	background-color: #55a041;
+	color: #000000;
+	padding-top: 20px;
+	border-bottom: none;
+}
+
+#about{	
+	color: #000000;
+}
+
+#about h1{	
+	color: #006600;
+}
+
+#about a{
+	color: #b2dd9d;
+}
+
+/* --- recent --- */
+
+#recent{	
+	background: #00469f;
+	position: relative;
+}
+
+
+#recent h1{
+	margin: 0px;
+	text-indent: 6.7%;
+	width: 100%;
+	line-height: 50px;
+	margin-top: -15px;
+	margin-bottom: -15px;
+	color: #0082ee;
+}
 
 #recent-buttons{
 	height: 35px;
@@ -268,83 +367,6 @@ body {
 }
 
 
-@media (max-width: 768px) {
-	.hero div{
-		width: 80%;
-		margin: 0 auto;
-		position: relative;
-		top: 100px;
-		left: auto;
-		padding-top: 5px;
-	}	
-
-}
-
-.meat {
-	width: 100%;
-	min-height: 300px;
-	float: left;
-	padding-bottom: 20px;
-	padding-top: 20px;
-}
-
-.meat > *{
-	width: 60%;
-	margin: 0 20%;
-}
-
-.meat p{
-	margin-bottom: 10px;
-	margin-top: 10px;
-	line-height: 20px;
-}
-
-@media (max-width: 768px) {
-	.meat > *{
-		width: 90%;
-		margin: 0 5%;
-	}
-}
-
-.meat h1{
-	text-align: left;
-	margin-top: 10px;
-	padding-bottom: 5px;
-}
-
-#recent{
-	/*background: #94cc00;*/	
-	background: #004480;
-	position: relative;
-}
-
-#news{
-	background-color: #f0e1a5;
-}
-
-#about{
-	background-color: #55a041;
-	color: #efefef;
-	padding-top: 20px;
-	border-bottom: none;
-}
-
-#participate{
-	background: #5a2b1b;	
-}
-
-
-#recent h1{
-	margin: 0px;
-	text-indent: 6.7%;
-	width: 100%;
-	line-height: 50px;
-	margin-top: -15px;
-	margin-bottom: -15px;
-	color: #95d6ff;
-
-}
-
 #recent ul{
 	list-style: none;
 	padding: 0px;
@@ -362,10 +384,10 @@ body {
 	margin-bottom: 20px;
 }
 
-
 #recent ul li a:hover{
 	text-decoration: none;
 }
+
 #recent ul li span{
 	background-color: #000;
 	display: block;
@@ -397,109 +419,50 @@ body {
 	background-color: #29292a;
 }
 
-
 #recent ul li img{
 	width: 100%;
 	max-height: 60%;
 }
 
 
-#about{	
-	color: #000000;
-}
-
-#about h1{	
-	color: #94cc00;
-}
-
-#about a{
-	color: #ffcc00;
-}
-#about a:hover{
-	color: #fff;
-}
-
-
-a{
-	color: #c05838;
-}
-
-a:hover{
-	color: #ffcc00;
-}
-
 @media (max-width: 768px) {
 
 	#recent ul{
-	list-style: none;
-	padding: 0px;
-	width: 90%;
-	margin: 0 auto;
-	margin-top: 20px;
-	
-}
+		list-style: none;
+		padding: 0px;
+		width: 90%;
+		margin: 0 auto;
+		margin-top: 20px;	
+	}
 
-#recent ul li{
-	float: left;
-	width: 100%;
-	overflow: hidden;	
-	margin-left: 1%;
-	height: 350px;
-	margin-bottom: 20px;
-}
+	#recent ul li{
+		float: left;
+		width: 100%;
+		overflow: hidden;	
+		margin-left: 1%;
+		height: 350px;
+		margin-bottom: 20px;
+	}
+
 	#recent h1{
 		text-indent: 5.5%;
 	}
 }
 
+
+/*--- participate ---*/
+
 #participate{
-	color: #e0b25b;
+	background: #c05838;	
+	color: #ffffff;
 }
-#participate h1{
-	border: none;
-	background: #5a2b1b;
-	color: #e0b25b;
+#participate h1{		
+	color: #773924;
 }
 
 #participate a{
-	color: #ff6600 !important;
+	color: #ff9966 !important;
 }
-
-#participate a:hover{
-	color: #ffcc00 !important;
-}
-
-
-#project{
-	background-color: #efefef
-
-}
-
-footer {
-	border-top: 1px solid #ffcc00 !important;
-	height: 150px;
-	float: left;
-	width: 100%;
-	
-}
-footer div{
-	width: 60%;
-	margin: 0 20%;
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
-
-footer{
-	padding-top: 20px;
-	border-bottom: none;
-	margin-bottom: 0px;
-}
-footer span{
-	color: #c05838;	
-	margin-left: 3px;
-		margin-right: 3px;
-}
-
 
 #participate span#download .btn-primary {
   color: #ffffff !important;
@@ -536,6 +499,36 @@ footer span{
 	border-left: 1px solid #b64602 !important;
 }
 
+/*  ---  footer --- */
+
+footer {
+	border-top: 1px solid #ffcc00 !important;
+	height: 150px;
+	float: left;
+	width: 100%;
+	
+	padding-top: 20px;
+	border-bottom: none;
+	margin-bottom: 0px;
+}
+footer div{
+	width: 60%;
+	margin: 0 20%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+footer span{
+	color: #c05838;	
+	margin-left: 3px;
+		margin-right: 3px;
+}
+
+
+/* --- SINGLE PAGES --- */
+
+
+/* --- projects --- */
 
 #projects{
 	background-color: #efefef;
@@ -586,6 +579,12 @@ footer span{
 	font-weight: 300;
 }
 
+/*--- project --- */
+
+#project{
+	background-color: #efefef
+
+}
 
 #project{
 	background-color: #efefef;
@@ -615,6 +614,8 @@ footer span{
 	margin-bottom: 10px;
 }
 
+/*--- contact --- */
+
 #contact{
 	background-color: #efefef;
 }
@@ -627,8 +628,7 @@ footer span{
 	margin-bottom: 10px;
 }
 
-
-
+/*--- login --- */
 
 #login.meat{
 	background-color: #efefef;
