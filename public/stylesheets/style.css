@@ -364,24 +364,24 @@ a:hover{
 	position: relative;
 }
 
-
-#recent h1{
-	margin: 0px;
-	text-indent: 6.7%;
-	width: 100%;
-	line-height: 50px;
-	margin-top: -15px;
-	margin-bottom: -15px;
-	color: #0082ee;
+#recent header{
+	width: 93.3%;
+	margin-left: 6.7%;
+	height: 55px;
 }
 
-#recent-buttons{
-	height: 35px;
-	position: relative;
-	display: block;
+#recent h1{
+	margin: 0px;	
+	line-height: 50px;	
+	color: #0082ee;
+	float: left;
+}
+
+#recent-buttons{	
 	width: 435px;
-	margin-top: -45px;
-	left: 100px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 8px;
 }
 
 #recent-buttons .btn-primary {
@@ -469,6 +469,29 @@ a:hover{
 }
 
 
+@media (max-width: 600px) {
+	#recent header{
+		width: 93.3%;
+		margin-left: 6.7%;
+		height: 100px;
+	}
+
+	#recent h1{
+		margin: 0px;	
+		line-height: 50px;	
+		color: #0082ee;
+		float: left;
+	}
+
+	#recent-buttons{	
+		width: 435px;
+		float: left;
+		margin-left: 0px;
+		margin-top: 8px;
+	}
+}
+
+
 @media (max-width: 768px) {
 
 	#recent ul{
@@ -484,15 +507,33 @@ a:hover{
 		width: 100%;
 		overflow: hidden;	
 		margin-left: 1%;
-		height: 350px;
+		height: 600px;
 		margin-bottom: 20px;
 	}
-
-	#recent h1{
-		text-indent: 5.5%;
+	
+	#recent ul li img{
+		width: 100%;
+		max-height: 90%;
 	}
 }
 
+
+@media (max-width: 440px) {
+
+	#recent ul li{
+		float: left;
+		width: 100%;
+		overflow: hidden;	
+		margin-left: 1%;
+		height: 500px;
+		margin-bottom: 20px;
+	}
+	
+	#recent ul li img{
+		width: 100%;
+		max-height: 90%;
+	}
+}
 
 /*--- participate ---*/
 
