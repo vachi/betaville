@@ -474,7 +474,9 @@ a:hover{
 }
 
 
-@media (max-width: 600px) {
+
+
+@media (max-width: 605px) {
 	#recent header{
 		width: 93.3%;
 		margin-left: 6.7%;
@@ -490,6 +492,28 @@ a:hover{
 
 	#recent-buttons{	
 		width: 435px;
+		float: left;
+		margin-left: 0px;
+		margin-top: 8px;
+	}
+}
+
+@media (max-width: 620px) {
+	#recent header{
+		width: 93.3%;
+		margin-left: 6.7%;
+		height: 100px;
+	}
+
+	#recent h1{
+		margin: 0px;	
+		line-height: 50px;	
+		color: #0082ee;
+		float: left;
+	}
+
+	#recent-buttons{	
+		width: 100%;
 		float: left;
 		margin-left: 0px;
 		margin-top: 8px;
