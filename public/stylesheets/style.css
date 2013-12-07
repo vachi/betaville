@@ -171,9 +171,9 @@ a:hover{
 .hero span#login .btn-primary:focus,
 .hero span#login .btn-primary:active,
 .hero span#login .btn-primary.active{
-  color: #ffffff;
-  background-color: #006db7;
-  border-color: #0082ee;
+  color: #4abaff !important;
+  background-color: #005cc4;
+  border-color: #005cc4;
 }
 
 .hero span#login .btn-primary:active,
@@ -191,11 +191,11 @@ a:hover{
 }
 
 .hero span#login a.register{
-	border-left: 1px solid #004480 !important;	
+	border-left: 1px solid #005cc4 !important;	
 }
 
 .hero span#download .btn-primary {
-  color: #ffffff;
+  color: #ffffff !important; 
   background-color: #ff6600;
   border-color: #ff6600;
   border-radius: 0px;
@@ -205,9 +205,9 @@ a:hover{
 .hero span#download .btn-primary:focus,
 .hero span#download .btn-primary:active,
 .hero span#download .btn-primary.active{
-  color: #ffffff;
-  background-color: #ee5e02;
-  border-color: #b64602;
+  color: #ff6600 !important; 
+  background-color: #773924;
+  border-color: #773924;
 }
 
 .hero span#download .btn-primary:active,
@@ -225,8 +225,8 @@ a:hover{
 }
 
 .hero span#download a.mac{
-	border-right: 1px solid #b64602 !important;
-	border-left: 1px solid #b64602 !important;
+	border-right: 1px solid #773924 !important;
+	border-left: 1px solid #773924 !important;
 }
 
 
@@ -395,9 +395,9 @@ a:hover{
 #recent-buttons .btn-primary:focus,
 #recent-buttons .btn-primary:active,
 #recent-buttons .btn-primary.active{
-  color: #ffffff;
-  background-color: #006db7;
-  border-color: #0082ee;
+  color: #4abaff !important;
+  background-color: #005cc4;
+  border-color: #005cc4;
 }
 
 #recent-buttons .btn-primary:active,
@@ -407,7 +407,7 @@ a:hover{
 }
 
 #recent-buttons a.middle{
-	border-left: 1px solid #004480 !important;	
+	border-left: 1px solid #005cc4 !important;	
 }
 
 
@@ -560,9 +560,9 @@ a:hover{
 #participate span#download .btn-primary:focus,
 #participate span#download .btn-primary:active,
 #participate span#download .btn-primary.active{
-  color: #ffffff;
-  background-color: #ee5e02;
-  border-color: #b64602;
+  color: #ff6600 !important;
+  background-color: #773924;
+  border-color: #773924;
 }
 
 #participate span#download .btn-primary:active,
@@ -580,8 +580,8 @@ a:hover{
 }
 
 #participate span#download a.mac{
-	border-right: 1px solid #b64602 !important;
-	border-left: 1px solid #b64602 !important;
+	border-right: 1px solid #773924 !important;
+	border-left: 1px solid #773924 !important;
 }
 
 /*  ---  footer --- */
