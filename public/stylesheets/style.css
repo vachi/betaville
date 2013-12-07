@@ -518,8 +518,21 @@ a:hover{
 		margin-left: 0px;
 		margin-top: 8px;
 	}
+
+	
 }
 
+
+@-moz-document url-prefix() {
+	#recent ul li span{
+		background-color: #000;
+		display: block;
+		padding: 5px;
+		height: 200px;
+		margin-top: -5px;
+		padding-top: 10px;			
+	}
+}
 
 @media (max-width: 768px) {
 
