@@ -460,8 +460,13 @@ a:hover{
 }
 
 #recent ul li:hover a span{
-	background-color: #29292a;
+	background-color: #ffcc00;
 }
+
+#recent ul li:hover *{
+	color: #000000;
+}
+
 
 #recent ul li img{
 	width: 100%;
@@ -504,10 +509,10 @@ a:hover{
 
 	#recent ul li{
 		float: left;
-		width: 100%;
+		width: 49%;
 		overflow: hidden;	
 		margin-left: 1%;
-		height: 600px;
+		height: 400px;
 		margin-bottom: 20px;
 	}
 	
