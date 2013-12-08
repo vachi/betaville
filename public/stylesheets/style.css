@@ -711,6 +711,38 @@ footer * a:hover{
 	font-weight: 300;
 }
 
+
+
+
+
+
+@media (max-width: 800px) {
+	#projects ul{
+		list-style: none;
+		padding: 0px;
+		margin-top: 20px;
+	}
+
+	#projects li{
+		height: auto;
+		margin-bottom: 30px;
+		overflow: hidden;
+	}
+	
+	#projects li img{
+	margin-left: 10px;
+	margin-top: 10px;
+	}
+
+	
+	#projects li span{
+	width: 100%;
+	margin-left: 10px;
+	}
+	
+
+}
+
 /*--- project --- */
 
 #project{
