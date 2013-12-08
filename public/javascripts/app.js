@@ -49,7 +49,7 @@ $(function(){
                     <p>'+data.design.description+'</p>\
                     </div>\
                     <div class="right">\
-                    <img src="http://storage.betaville.net/designthumbs/'+data.design.designID+'.png"  onError="'+imgsE+';" /><div id="map" style="width: 400px; height: 300px"></div><script type="text/javascript">var myOptions = {zoom: 8,center: new google.maps.LatLng('+(data.design.coordinate.lat)+', '+(data.design.coordinate.lon)+'),mapTypeId: google.maps.MapTypeId.ROADMAP};var map = new google.maps.Map(document.getElementById("map"), myOptions);</script> </div>');                
+                    <img src="http://storage.betaville.net/designthumbs/'+data.design.designID+'.png"  onError="'+imgsE+';" /><div id="map" style="width: 100%; height: 300px"></div><script>var map=L.mapbox.map("map","examples.map-20v6611k").setView(['+data.design.coordinate.lat+','+data.design.coordinate.lon+'],15);L.mapbox.markerLayer({type:"Feature",geometry:{type:"Point",coordinates:['+data.design.coordinate.lon+','+data.design.coordinate.lat+']},properties:{title:"'+data.design.name+'",description:"'+data.design.description+'","marker-size":"large","marker-color":"#f0a"}}).addTo(map);</script> </div>');                
             }
         });
     });
@@ -84,3 +84,6 @@ $(function(){
 // response.header("Access-Control-Allow-Origin", "*");
 // response.header("Access-Control-Allow-Headers", "X-Requested-With");
 
+
+
+// <img src="http://storage.betaville.net/designthumbs/'+data.design.designID+'.png"  onError="'+imgsE+';" /><div id="map" style="width: 400px; height: 300px"></div><script type="text/javascript">var myOptions = {zoom: 8,center: new google.maps.LatLng('+(data.design.coordinate.lat)+', '+(data.design.coordinate.lon)+'),mapTypeId: google.maps.MapTypeId.ROADMAP};var map = new google.maps.Map(document.getElementById("map"), myOptions);</script> </div>');                
