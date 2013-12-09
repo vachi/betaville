@@ -664,11 +664,9 @@ footer * a:hover{
 /* --- projects --- */
 
 #projects{
-	background-color: #5b5242;
+	background-color: #efefef;
 }
-#projects > h1{
-	color: #eee2a6;
-}
+
 #projects > *{
 	width: 90%;
 	margin: 0 auto;
@@ -687,7 +685,7 @@ footer * a:hover{
 }
 
 #projects li:hover{
-	background-color: #373227;
+	background-color: #e5e4e7;
 }
 
 #projects li img{
@@ -697,13 +695,8 @@ footer * a:hover{
 	min-width: 300px;	
 }
 
-#projects li *{
-	color: #efefef;
-}
-
 #projects li h2{
 	margin-top: 10px;
-	color: #eee2a6;
 }
 
 #projects li span{
