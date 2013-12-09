@@ -422,6 +422,7 @@ a:hover{
 #recent ul li{
 	float: left;
 	width: 30%;
+	max-width: 380px;
 	overflow: hidden;	
 	margin-left: 2%;
 	height: 380px;
@@ -746,12 +747,11 @@ footer * a:hover{
 /*--- project --- */
 
 #project{
-	background-color: #efefef
-
+	background-color: #5b5242;
 }
 
-#project{
-	background-color: #efefef;
+#project.meat h5 a{
+	color: #ffffff;
 }
 
 #project > *{
@@ -765,6 +765,15 @@ footer * a:hover{
 	margin-left: 10%;
 }
 
+#project div.left h1 {
+	color: #eee2a6;
+}
+
+#project div.left * {
+	color: #ffffff;
+}
+
+
 #project .right{
 	width: 30%;
 	margin-left: 2%;
@@ -777,6 +786,47 @@ footer * a:hover{
 	width: 100%;
 	margin-bottom: 10px;
 }
+
+
+#project .right p{
+	padding: 25px;
+	background-color: #104016;
+	color: #8bc53f;
+	text-align: right;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 780px) {
+	#project > h5 {
+		margin: 0px;
+		margin-left: 2%;
+	}
+	#project .left{
+		display: block;
+		margin: 0px;
+		width: 98%;
+		float: left;
+		padding-left: 2%;
+	}	
+
+	#project .right{
+		display: block;
+		margin: 0px;
+		width: 98%;
+		float: left;
+		padding-left: 2%;
+	}
+
+}
+
 
 /*--- contact --- */
 

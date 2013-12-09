@@ -39,17 +39,15 @@ $(function(){
             dataType: 'json', 
             success: function(data) 
             {
-                
-                $("#project").append('\
-                    <div class="left">\
-                    <h1>'+data.design.name+'</h1>\
-                    <h5>author: <b>'+data.design.user+'</b></h5>\
-                    <h5>created: <b>'+data.design.date+'</b></h5>\
-                    <h5>id: <b>'+data.design.designID+'</b></h5>\
-                    <p>'+data.design.description+'</p>\
-                    </div>\
-                    <div class="right">\
-                    <img src="http://storage.betaville.net/designthumbs/'+data.design.designID+'.png"  onError="'+imgsE+';" /><div id="map" style="width: 100%; height: 300px"></div><script>var map=L.mapbox.map("map","examples.map-20v6611k").setView(['+data.design.coordinate.lat+','+data.design.coordinate.lon+'],15);L.mapbox.markerLayer({type:"Feature",geometry:{type:"Point",coordinates:['+data.design.coordinate.lon+','+data.design.coordinate.lat+']},properties:{title:"'+data.design.name+'",description:"'+data.design.description+'","marker-size":"large","marker-color":"#f0a"}}).addTo(map);</script> </div>');                
+                $("#project .left h1").html(data.design.name);
+                $("#project .left .author").html('author: <b>'+data.design.user+'</b>');
+                $("#project .left .created").html('created: <b>'+data.design.date+'</b>');
+                $("#project .left .id").html('id: <b>'+data.design.designID+'</b>');
+                $("#project .left p").html(data.design.description);
+                $("#project .right img").attr('src','http://storage.betaville.net/designthumbs/'+data.design.designID+'.png');
+                $("#project .right img").attr('onError',imgsE);
+                $("#project .right script").html('var map=L.mapbox.map("map","examples.map-20v6611k").setView(['+data.design.coordinate.lat+','+data.design.coordinate.lon+'],15);L.mapbox.markerLayer({type:"Feature",geometry:{type:"Point",coordinates:['+data.design.coordinate.lon+','+data.design.coordinate.lat+']},properties:{title:"'+data.design.name+'",description:"'+data.design.description+'","marker-size":"large","marker-color":"#ffcc00"}}).addTo(map);');
+
             }
         });
     });
@@ -83,7 +81,6 @@ $(function(){
 
 // response.header("Access-Control-Allow-Origin", "*");
 // response.header("Access-Control-Allow-Headers", "X-Requested-With");
-
-
-
 // <img src="http://storage.betaville.net/designthumbs/'+data.design.designID+'.png"  onError="'+imgsE+';" /><div id="map" style="width: 400px; height: 300px"></div><script type="text/javascript">var myOptions = {zoom: 8,center: new google.maps.LatLng('+(data.design.coordinate.lat)+', '+(data.design.coordinate.lon)+'),mapTypeId: google.maps.MapTypeId.ROADMAP};var map = new google.maps.Map(document.getElementById("map"), myOptions);</script> </div>');                
+
+// $("#project .right script").html('var map = L.mapbox.map("map", "project").setView(['+data.design.coordinate.lat+','+data.design.coordinate.lon+'], 15);var geoJson = [{"type": "Feature","geometry": {"type": "Point","coordinates": ['+data.design.coordinate.lat+','+data.design.coordinate.lon+']},"properties": {"title": "'+data.design.name+'","icon": {"iconUrl": "/images/icon.png","iconSize": [50, 50], "iconAnchor": [25, 25], "popupAnchor": [0, -25],"className": "dot"}}}]; map.markerLayer.on("layeradd", function(e) {var marker = e.layer,feature = marker.feature; marker.setIcon(L.icon(feature.properties.icon));}); map.markerLayer.setGeoJSON(geoJson);');
