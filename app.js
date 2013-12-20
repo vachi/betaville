@@ -18,8 +18,11 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
+app.use(express.cookieParser('6397EA6158CA269858155B7B842BF'));
+app.use(express.cookieSession());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // development only
 if ('development' == app.get('env')) {
@@ -33,7 +36,75 @@ app.get('/login', routes.login);
 app.get('/contact', routes.contact);
 
 
-app.get('/blog', routes.blog);
+var Request = function Request() {	
+	this.host			= 'http://5.9.20.212/';
+	this.baseUrl		= 'service/service.php';
+};
+Request.prototype.executeRequest = function(method, parameters, callback) {	
+	console.log(this.host+this.baseUrl+method+parameters);
+
+	http.get(this.host+this.baseUrl+method+parameters, function(res) {
+		if (res.statusCode && res.statusCode === 200) {
+			// console.log(res);
+			var chunks	= '';
+			res.on('data', function(resultData) {
+				chunks	+= resultData;
+			});
+			res.on('end', function() {
+				callback(null, JSON.parse(chunks));
+			});
+		}
+		else {
+            callback({code: res.code, message: res.message});
+        }
+	}).on('error', function(error) {
+		callback(error);
+	});
+};
+
+userLogIn = function(parameters, callback) {
+	if( parameters === undefined ) parameters = {};	
+	_request = new Request();
+	this._request.executeRequest('?section=user&request=auth', parameters, callback);
+};
+
+userType = function(parameters, callback) {
+	if( parameters === undefined ) parameters = {};	
+	_request = new Request();
+	
+	this._request.executeRequest('?section=user&request=getlevel', parameters, callback);
+};
+
+app.get('/auth/:user/:pass', function(request, response) {
+	userLogIn('&username='+request.params.user+'&password='+request.params.pass, function(err, result) {
+		if (err) {
+	    	console.log("ERROR:", err);
+	    	response.send(err);
+	    } else {
+	    	if(result.authenticationSuccess == true){
+	       		request.session.token = result.token;
+	       		response.send(true)	       		
+			}
+			else{
+				request.session.token = null;
+	       		response.send(false)	       		
+			}
+	    }
+	});
+});
+
+app.get('/level/:user/', function(request, response) {
+	userType('&username='+request.params.user, function(err, result) {
+		if (err) {
+	    	console.log("ERROR:", err);
+	    	response.send(err);
+	    } else {	    	
+	    	request.session.userType = result.userType;	       		
+			response.send(result.userType);
+	    }
+	});
+});
+
 
 
 http.createServer(app).listen(app.get('port'), function(){
