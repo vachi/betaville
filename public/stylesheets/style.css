@@ -847,6 +847,49 @@ footer * a:hover{
 	background-color: #efefef;
 }
 
+#login #loginForm{
+	margin-bottom: 50px;
+}
+
+#login #loginForm input{
+	display: block;
+	margin-bottom: 5px;
+	width: 250px;
+	height: 30px;
+	line-height: 30px;	
+}
+
+#login #loginForm button.btn-primary {
+  color: #ffffff;
+  background-color: #0082ee;
+  border-color: #0082ee;
+  border-radius: 0px;
+}
+
+#login #loginForm button.btn-primary:hover,
+#login #loginForm button.btn-primary:focus,
+#login #loginForm button.btn-primary:active,
+#login #loginForm button.btn-primary.active{
+  color: #4abaff !important;
+  background-color: #005cc4;
+  border-color: #005cc4;
+}
+
+#login #loginForm button.btn-primary:active,
+#login #loginForm button.btn-primary.active,
+#login #loginForm button.open .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+
+#login div.notice{
+	width: 250px;
+	min-height: 28px;
+	margin: 0 5px 10px 0;
+	background-color: #fff;
+	border: 1px solid #dddddd;
+	display: none;
+}
+
 #login.meat img{
 	width: 40%;
 	margin-bottom: 20px;

@@ -13,7 +13,7 @@
 var imgsE = "this.onerror=null;this.src='/images/sorry.gif'";
 
 $(function(){  
-        $('#recent ul').ready( function(){
+        if($('#recent ul').length >0 ){
             $.ajax({ 
                 url: 'http://5.9.20.212/service/service.php?',
                 data: 'section=activity&request=proposals&quantity=6', 
@@ -26,10 +26,10 @@ $(function(){
                     });
                 }
             });
-    });
+    };
 });
 $(function(){  
-    $('#project').ready( function(){
+    if($('#project').length >0 ){
         var pathname = window.location.pathname;
         var pathname= pathname.substr(pathname.lastIndexOf('/') + 1);        
 
@@ -50,12 +50,12 @@ $(function(){
 
             }
         });
-    });
+    };
 });
 
 
 $(function(){  
-    $('#projects').ready( function(){
+    if($('#projects').length >0 ){
         $.ajax({ 
             url: 'http://5.9.20.212/service/service.php?',
             data: 'section=activity&request=proposals', 
@@ -68,8 +68,40 @@ $(function(){
                 });
             }
         });
-    });
+    };
 });
+
+
+$(function(){  
+    
+    if($('#login').length >0 ){
+        
+        $("#loginForm button").click(function() {})
+
+        $("#loginForm button").click(function() {
+            var userVal = $("input[name='user']").val();
+            var passVal = $("input[name='pass']").val();
+
+
+
+            $.ajax({ 
+                url: '/auth/'+userVal+'/'+passVal,                
+                success: function(data) 
+                {                        
+                    console.log(data);
+                    // _.each(data.designs,function (val, key) {                
+                    //     $("#projects ul").append('<li><a class="clearfix" href="./project/'+val.designID+'"><img src="http://storage.betaville.net/designthumbs/'+val.designID+'.png" onError="'+imgsE+';" /><span> <h2>'+val.name+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5><h5>id: <b>'+val.designID+'</b></h5><p>'+val.description+'</p></span></a></li>');
+                    // });
+                }
+            });
+
+        });
+
+
+        
+    };
+});
+
 
 
 }(window.jQuery)

@@ -75,6 +75,8 @@ userType = function(parameters, callback) {
 	this._request.executeRequest('?section=user&request=getlevel', parameters, callback);
 };
 
+
+
 app.get('/auth/:user/:pass', function(request, response) {
 	userLogIn('&username='+request.params.user+'&password='+request.params.pass, function(err, result) {
 		if (err) {
@@ -87,7 +89,7 @@ app.get('/auth/:user/:pass', function(request, response) {
 			}
 			else{
 				request.session.token = null;
-	       		response.send(false)	       		
+	       		response.send(false)       		
 			}
 	    }
 	});
