@@ -902,3 +902,7 @@ footer * a:hover{
 #login.meat h4{
 	margin-bottom: 10px;
 }
+
+#admin.meat{
+	background-color: #efefef;
+}

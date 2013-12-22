@@ -85,10 +85,13 @@ app.get('/auth/:user/:pass', function(request, response) {
 	    } else {
 	    	if(result.authenticationSuccess == true){
 	       		request.session.token = result.token;
+	       		request.session.user = request.params.user;	       		
+	       		request.session.logged = 'in';
 	       		response.send(true)	       		
 			}
 			else{
 				request.session.token = null;
+				request.session.logged = 'out';
 	       		response.send(false)       		
 			}
 	    }
@@ -107,6 +110,15 @@ app.get('/level/:user/', function(request, response) {
 	});
 });
 
+app.get('/admin', function(req, res) {
+	if (req.session.logged === null || req.session.logged === undefined || req.session.logged === 'out'){    
+        res.redirect('/login');
+    }
+    if (req.session.logged === 'in' || req.session.token > 0 || req.session.user > 0){    
+        app.get('/admin/dashboard', routes.adminDashboard);        
+        res.redirect('/admin/dashboard');
+    }
+});
 
 
 http.createServer(app).listen(app.get('port'), function(){

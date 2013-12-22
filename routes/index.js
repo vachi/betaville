@@ -1,34 +1,32 @@
 exports.index = function(req, res){
-  res.render('index', {   	
-  });
+  res.render('index', {});
 };
 
 exports.blog = function(req, res){
-  res.render('blog', {   	
-  });
+  res.render('blog', {});
 };
 
-
 exports.project = function(req, res){
-  res.render('project', {   	
-  });
+  res.render('project', {});
 };
 
 exports.projects = function(req, res){
-  res.render('projects', {   	
-  });
+  res.render('projects', {});
 };
-
 
 exports.contact = function(req, res){
-  res.render('contact', {   	
-  });
+  res.render('contact', {});
 };
-
 
 exports.login = function(req, res){
-  res.render('login', {   	
-  });
+  res.render('login', {});
 };
 
+exports.admin = function(req, res){
+  res.render('admin', {  'logged':'in'});
+};
+
+exports.adminDashboard = function(req, res){
+  res.render('adminDashboard', {});
+};
 
