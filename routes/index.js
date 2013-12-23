@@ -30,3 +30,11 @@ exports.adminDashboard = function(req, res){
   res.render('adminDashboard', {});
 };
 
+exports.memberDashboard = function(req, res){
+  res.render('memberDashboard', {});
+};
+
+exports.moderatorDashboard = function(req, res){
+  res.render('moderatorDashboard', {});
+};
+

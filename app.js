@@ -84,10 +84,21 @@ app.get('/auth/:user/:pass', function(request, response) {
 	    	response.send(err);
 	    } else {
 	    	if(result.authenticationSuccess == true){
-	       		request.session.token = result.token;
-	       		request.session.user = request.params.user;	       		
-	       		request.session.logged = 'in';
-	       		response.send(true)	       		
+	       		
+	       		
+	       		userType('&username='+request.params.user, function(errType, resultType) {
+					if (err) {
+				    	console.log("ERROR:", err);
+				    	response.send(err);
+				    } else {				    	
+				    	console.log(resultType.userType);
+				    	request.session.userType = resultType.userType;						
+				    	request.session.token = result.token;
+	       				request.session.user = request.params.user;	       		
+	       				request.session.logged = 'in';
+	       				response.send(true)	       		
+				    }
+				});	       		
 			}
 			else{
 				request.session.token = null;
@@ -110,13 +121,26 @@ app.get('/level/:user/', function(request, response) {
 	});
 });
 
-app.get('/admin', function(req, res) {
-	if (req.session.logged === null || req.session.logged === undefined || req.session.logged === 'out'){    
-        res.redirect('/login');
-    }
-    if (req.session.logged === 'in' || req.session.token > 0 || req.session.user > 0){    
+app.get('/admin', function(req, res) {	
+    // res.send(req.session.userType);
+    // req.session.logged === 'in' && req.session.token > 0 && req.session.user > 0 && 
+    if (req.session.userType === 'admin'){    
         app.get('/admin/dashboard', routes.adminDashboard);        
         res.redirect('/admin/dashboard');
+    }
+    else if (req.session.userType === 'member'){        
+        // res.send("loged",req.session.userType);
+        app.get('/member/dashboard', routes.memberDashboard);        
+        res.redirect('/member/dashboard');
+    }
+    else if (req.session.userType === 'moderator'){        
+        // res.send("loged",req.session.userType);
+        app.get('/moderator/dashboard', routes.moderatorDashboard);        
+        res.redirect('/moderator/dashboard');
+    }    
+    else {    
+        console.log("redirected");
+        res.redirect('/login');
     }
 });
 

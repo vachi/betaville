@@ -1,0 +1,63 @@
+extends layout
+
+block content  
+  div(class="navbar navbar-default navbar-fixed-top")    
+      div(class="navbar-header")
+        button(type="button", class="navbar-toggle", data-toggle="collapse", data-target=".navbar-collapse")
+          span(class="icon-bar")
+          span(class="icon-bar")
+          span(class="icon-bar")         
+        a(href="/" class="navbar-brand") betaville
+      div(class="navbar-collapse collapse")        
+        ul(class="nav navbar-nav")
+          li(class="")
+            a(href="/#news") news
+          li(class="")
+            a(href="/#about") about
+          li(class="")
+            a(href="/#recent") recent
+          li(class="")
+            a(href="/#participate") participate
+
+  div(id="moderator", class="meat")     
+    h1 Moderator Dashboard
+
+  //-   table(id="users",class="table")
+  //-     thead
+  //-       tr
+  //-         th user name
+  //-         th user type                        
+  //-     tbody        
+          
+          
+
+  //- script(type="text/javascript")
+  //-   $(function(){  
+  //-       if($('#admin').length >0 ){            
+  //-           $.ajax({ 
+  //-               url: 'http://5.9.20.212/service/service.php?',            
+  //-               data: 'section=user&request=finduser', 
+  //-               dataType: 'json', 
+  //-               success: function(data) 
+  //-               {
+  //-                 console.log(data);                  
+  //-                 _.each(data.users,function (val, key) {
+  //-                     $.ajax({
+  //-                         url: 'http://5.9.20.212/service/service.php?',
+  //-                         data: 'section=user&request=getlevel&username='+val, 
+  //-                         dataType: 'json', 
+  //-                         success: function(dataUserType) 
+  //-                         {                            
+  //-                           $("#admin #users tbody").append('<tr><td>'+val+'</td><td>'+dataUserType.userType+'</td></tr>');        
+  //-                         }
+  //-                     });
+
+  //-                 });
+                    
+  //-               }
+  //-           });
+  //-       };
+  //-   });
+
+  script(type="text/javascript", src="/javascripts/bootstrap.min.js")
+  script(type="text/javascript", src="/javascripts/libs.js")
