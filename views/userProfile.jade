@@ -20,13 +20,18 @@ block content
             a(href="/#participate") participate
 
   div(id="member", class="meat")     
-    h1(class="userName") <img src="">
+    h1(class="userName") <img src=""> 
     span(id="dashBoardHeader")
       a(class="btn btn-primary btn-large projects", href="#projects") pojects 
       a(class="btn btn-primary btn-large comments", href="#comments") comments
       a(class="btn btn-primary btn-large users", href="#users") search users
 
-    div(id="projects")
+    div(id="projectsUser")
+      h1 projects
+      ul
+
+    div(id="comments")
+      h1 comments
       ul
 
 
@@ -58,6 +63,7 @@ block content
                     if (data.userInfo.avatar !== null){
                       $(".userName img").attr("src",data.userInfo.avatar);
                     }
+                    
                   }
                 }
             });            
@@ -69,12 +75,27 @@ block content
                 {
                   console.log(data);
                   _.each(data.designs,function (val, key) {                      
-                      $("#projects ul").append('<li><a href="./project/'+val.designID+'"><img src="http://storage.betaville.net/designthumbs/'+val.designID+'.png" onError="'+imgsE+';" /><span> <h2>'+val.name+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5><h5>id: <b>'+val.designID+'</b></h5><p>'+val.description+'</p></span></a></li>');                      
+                      $("#projectsUser ul").append('<li><a href="../project/'+val.designID+'"><img src="http://storage.betaville.net/designthumbs/'+val.designID+'.png" onError="'+imgsE+';" /><span> <h2>'+val.name+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5><h5>id: <b>'+val.designID+'</b></h5><p>'+val.description+'</p></span></a></li>');                      
                   });
 
                 }
             });
 
+            $.ajax({ 
+                url: 'http://5.9.20.212/service/service.php?',            
+                data: 'section=activity&request=myactivity&user='+userName, 
+                dataType: 'json', 
+                success: function(data) 
+                {
+                  console.log(data);
+                  _.each(data.comments,function (val, key) {                      
+                      $("#comments ul").append('<li><a href="../project/'+val.designid+'"><h2>'+val.comment+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5></a></li>');                      
+                  });
+
+                }
+            });
+
+            
 
         };
     });
