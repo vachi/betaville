@@ -94,7 +94,7 @@ app.get('/auth/:user/:pass', function(request, response) {
 				    	console.log(resultType.userType);
 				    	request.session.userType = resultType.userType;						
 				    	request.session.token = result.token;
-	       				request.session.user = request.params.user;	       		
+	       				request.session.userName = request.params.user;	       		
 	       				request.session.logged = 'in';
 	       				response.send(true)	       		
 				    }
@@ -121,23 +121,25 @@ app.get('/level/:user/', function(request, response) {
 	});
 });
 
+app.get('/user/:userName', routes.userProfile);
+
 app.get('/admin', function(req, res) {	
     // res.send(req.session.userType);
     // req.session.logged === 'in' && req.session.token > 0 && req.session.user > 0 && 
-    if (req.session.userType === 'admin'){    
-        app.get('/admin/dashboard', routes.adminDashboard);        
-        res.redirect('/admin/dashboard');
-    }
-    else if (req.session.userType === 'member'){        
+    if (req.session.userType === 'member'){        
         // res.send("loged",req.session.userType);
-        app.get('/member/dashboard', routes.memberDashboard);        
-        res.redirect('/member/dashboard');
-    }
+        app.get('/user/'+req.session.userName+'/dashboard', routes.memberDashboard);        
+        res.redirect('/user/'+req.session.userName+'/dashboard');
+    }       
     else if (req.session.userType === 'moderator'){        
         // res.send("loged",req.session.userType);
-        app.get('/moderator/dashboard', routes.moderatorDashboard);        
-        res.redirect('/moderator/dashboard');
-    }    
+        app.get('/user/'+req.session.userName+'/dashboard', routes.moderatorDashboard);        
+        res.redirect('/user/'+req.session.userName+'/dashboard');
+    }
+	else if (req.session.userType === 'admin'){    
+        app.get('/user/'+req.session.userName+'/dashboard', routes.adminDashboard);        
+        res.redirect('/user/'+req.session.userName+'/dashboard');
+    }
     else {    
         console.log("redirected");
         res.redirect('/login');
@@ -148,3 +150,4 @@ app.get('/admin', function(req, res) {
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+

@@ -34,6 +34,10 @@ exports.memberDashboard = function(req, res){
   res.render('memberDashboard', {});
 };
 
+exports.userProfile = function(req, res){
+  res.render('userProfile', {});
+};
+
 exports.moderatorDashboard = function(req, res){
   res.render('moderatorDashboard', {});
 };
