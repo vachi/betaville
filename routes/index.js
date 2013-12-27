@@ -23,12 +23,12 @@ exports.login = function(req, res){
 };
 
 exports.admin = function(req, res){
-  res.render('admin', {  'logged':'in'});
+  res.render('admin', {});
 };
 
-exports.adminDashboard = function(req, res){
-  res.render('adminDashboard', {});
-};
+// exports.adminDashboard = function(req, res){
+//   res.render('adminDashboard', {});
+// };
 
 exports.memberDashboard = function(req, res){
   res.render('memberDashboard', {});

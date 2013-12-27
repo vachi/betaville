@@ -22,42 +22,49 @@ block content
   div(id="admin", class="meat")     
     h1 Admin Dashboard
 
+
     table(id="users",class="table")
       thead
         tr
           th user name
-          th user type                        
+          th user type
+          th user emails
+          th approve user        
+          th number of projects                    
       tbody        
-          
-          
 
   script(type="text/javascript")
     $(function(){  
-        if($('#admin').length >0 ){            
-            $.ajax({ 
-                url: 'http://5.9.20.212/service/service.php?',            
-                data: 'section=user&request=finduser', 
-                dataType: 'json', 
-                success: function(data) 
-                {
-                  console.log(data);                  
-                  _.each(data.users,function (val, key) {
-                      $.ajax({
-                          url: 'http://5.9.20.212/service/service.php?',
-                          data: 'section=user&request=getlevel&username='+val, 
-                          dataType: 'json', 
-                          success: function(dataUserType) 
-                          {                            
-                            $("#admin #users tbody").append('<tr><td>'+val+'</td><td>'+dataUserType.userType+'</td></tr>');        
-                          }
-                      });
+        if($('#admin').length >0 ){
+          var data = !{JSON.stringify(locals)};
+          _.each(data.locals[0].data,function (val, key) {
+            $("#admin #users tbody").append('<tr data-user="'+val.userName+'"><td><a href="/user/'+val.userName.trim()+'">'+val.userName+'</a></td><td>'+val.type+'</td><td><a href="mailto:'+val.email+'">'+val.email+'</a></td><td><input type="checkbox" '+(val.activated=="1" ? "checked=checked" : "")+'></td><td>'+(val.designs!="0" ? val.designs : "")+'</td></tr>');
+          });
 
-                  });
-                    
-                }
-            });
+          $("#admin #users tbody tr td input").on("change",function(){
+            if (!$(this).is(":checked")){                
+              console.log("checked");
+            }
+            else{
+              var userName = $(this).parents("tr").attr("data-user");              
+              console.log($(this).parents("tr").attr("data-user") + " unchecked");
+              $.ajax({ 
+                  url: 'http://5.9.20.212/service/service.php?',            
+                  data: 'section=user&request=activateuserByName&user='+userName, 
+                  dataType: 'json', 
+                  success: function(data) 
+                  {                    
+                    console.log(userName +" activated");                   
+                  }
+              });
+
+            }
+          });
+          
         };
     });
 
   script(type="text/javascript", src="/javascripts/bootstrap.min.js")
   script(type="text/javascript", src="/javascripts/libs.js")
+
+

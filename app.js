@@ -6,7 +6,8 @@
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , _	= require("underscore");
 
 var app = express();
 
@@ -75,6 +76,11 @@ userType = function(parameters, callback) {
 	this._request.executeRequest('?section=user&request=getlevel', parameters, callback);
 };
 
+userAll = function(parameters, callback) {
+	if( parameters === undefined ) parameters = {};	
+	_request = new Request();	
+	this._request.executeRequest('?section=user', parameters, callback);
+};
 
 
 app.get('/auth/:user/:pass', function(request, response) {
@@ -136,9 +142,22 @@ app.get('/admin', function(req, res) {
         app.get('/user/'+req.session.userName+'/dashboard', routes.moderatorDashboard);        
         res.redirect('/user/'+req.session.userName+'/dashboard');
     }
-	else if (req.session.userType === 'admin'){    
-        app.get('/user/'+req.session.userName+'/dashboard', routes.adminDashboard);        
-        res.redirect('/user/'+req.session.userName+'/dashboard');
+	else if (req.session.userType === 'admin'){        			
+        app.get('/user/'+req.session.userName+'/dashboard', function(request, response) {			
+        	var arr = [];
+
+			userAll('&request=findUserInfo', function(err, result) {
+				if (err) {
+			    	console.log("ERROR:", err);
+			    	response.send(err);
+			    } else {					
+					response.render(__dirname + '/views/adminDashboard.jade', {
+				        locals: [{data: result.users}]					
+					});
+			    }
+			});
+		});		
+		res.redirect('/user/'+req.session.userName+'/dashboard');
     }
     else {    
         console.log("redirected");
