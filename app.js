@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -74,6 +73,14 @@ userType = function(parameters, callback) {
 	_request = new Request();
 	
 	this._request.executeRequest('?section=user&request=getlevel', parameters, callback);
+};
+
+userTypeChange = function(parameters, callback) {
+	if( parameters === undefined ) parameters = {};	
+	_request = new Request();
+	// http://5.9.20.212/service/service.php?section=user&request=changetype&username=CESAR&type=admin&token=
+
+	this._request.executeRequest('?section=user&request=changetype', parameters, callback);
 };
 
 userAll = function(parameters, callback) {
@@ -166,7 +173,30 @@ app.get('/admin', function(req, res) {
 });
 
 
+app.get('/admin/userTypeChange/:user/:userType', function(request, response) {
+	var userName = request.params.user,
+		userType = request.params.userType,
+		userToken = request.session.token;
+
+	// http://5.9.20.212/service/service.php?section=user&request=changetype&username=CESAR&type=admin&token=
+
+	userTypeChange('&username='+userName+'&type='+userType+'&token='+userToken, function(errTypeChange, resultTypeChange) {
+		if (errTypeChange) {
+	    	console.log("ERROR:", errTypeChange);
+	    	response.send(errTypeChange);
+	    } else {				    		    	
+	    	console.log(resultTypeChange.changetype);	    	
+	    	response.send(resultTypeChange.changetype);
+	    }
+	});		
+
+	// response.send(request.session.token +" "+ request.session.userName +" "+request.session.userType +" --- "+userName+" "+userType);
+
+
+
+});
+
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
-

@@ -38,7 +38,7 @@ block content
         if($('#admin').length >0 ){
           var data = !{JSON.stringify(locals)};
           _.each(data.locals[0].data,function (val, key) {
-            $("#admin #users tbody").append('<tr data-user="'+val.userName+'"><td><a href="/user/'+val.userName.trim()+'">'+val.userName+'</a></td><td>'+val.type+'</td><td><a href="mailto:'+val.email+'">'+val.email+'</a></td><td><input type="checkbox" '+(val.activated=="1" ? "checked=checked" : "")+'></td><td>'+(val.designs!="0" ? val.designs : "")+'</td></tr>');
+            $("#admin #users tbody").append('<tr data-user="'+val.userName+'"><td><a href="/user/'+val.userName.trim()+'">'+val.userName+'</a></td><td><select><option value="'+val.type+'">'+val.type+'</option><option value="member">member</option><option value="moderator">moderator</option><option value="base_commiter">base_commiter</option><option value="admin">admin</option></select</td><td><a href="mailto:'+val.email+'">'+val.email+'</a></td><td><input type="checkbox" '+(val.activated=="1" ? "checked=checked" : "")+'></td><td>'+(val.designs!="0" ? val.designs : "")+'</td></tr>');
           });
 
           $("#admin #users tbody tr td input").on("change",function(){
@@ -59,8 +59,29 @@ block content
               });
 
             }
+          });          
+
+          $("#admin #users tbody tr td select").on("change",function(){
+            var userType = $(this).val();
+            var userName = $(this).closest("tr").attr("data-user");
+            
+            $.ajax({ 
+              url: '/admin/userTypeChange/'+userName+'/'+userType,            
+              
+              dataType: 'json', 
+              success: function(data) 
+              {                    
+                console.log(data);
+                
+              }
+            });            
+
+
+
+
           });
-          
+
+
         };
     });
 
