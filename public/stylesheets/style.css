@@ -947,10 +947,93 @@ footer * a:hover{
 }
 
 
-#member.meat{
-	background-color: #efefef;
-}
 
 #moderator.meat{
 	background-color: #efefef;
+}
+
+
+
+/* --- news --- */
+#member.meat{
+	background-color: #f0e1a5;
+}
+
+#member h1{
+	color: #928878;
+}
+
+#member ul a{
+	color: #ff6600;
+}
+
+#member #dashBoardHeader .btn-primary {
+  color: #ffffff !important; 
+  background-color: #ff6600;
+  border-color: #ff6600;
+  border-radius: 0px;
+}
+
+#member #dashBoardHeader .btn-primary:hover,
+#member #dashBoardHeader .btn-primary:focus,
+#member #dashBoardHeader .btn-primary:active,
+#member #dashBoardHeader .btn-primary.active{
+  color: #ff6600 !important; 
+  background-color: #773924;
+  border-color: #773924;
+}
+
+#member #dashBoardHeader .btn-primary:active,
+#member #dashBoardHeader .btn-primary.active,
+#member #dashBoardHeader .open .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+
+#member #dashBoardHeader a.btn-primary:nth-child(even){
+	border-right: 1px solid #773924 !important;
+	border-left: 1px solid #773924 !important;
+}
+
+#member ul{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#member ul li{
+	border-bottom: 1px solid #ff6600;
+	margin-bottom: 10px;
+	margin-right: 2%;
+}
+
+#member ul li img{
+	width: 10%;
+	max-width: 100px;
+	float: left;	
+}
+
+#member ul li span{
+	width: 88%;
+	float: left;
+	margin-left: 2%;
+	
+}
+
+#member ul li span h5{
+	margin: 0px;
+	margin-right: 5px;
+	float: left;
+}
+
+#member ul li span p{
+	float: left;
+	width: 100%;
+}
+
+
+#member ul li span *{
+	color: #333333;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 0px;
 }

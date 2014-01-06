@@ -24,7 +24,7 @@ block content
     span(id="dashBoardHeader")
       a(class="btn btn-primary btn-large projects", href="#projects") pojects 
       a(class="btn btn-primary btn-large comments", href="#comments") comments
-      a(class="btn btn-primary btn-large users", href="#users") search users
+      //- a(class="btn btn-primary btn-large users", href="#users") search users
 
     div(id="projectsUser")
       h1 projects
@@ -75,7 +75,7 @@ block content
                 {
                   console.log(data);
                   _.each(data.designs,function (val, key) {                      
-                      $("#projectsUser ul").append('<li><a href="../project/'+val.designID+'"><img src="http://storage.betaville.net/designthumbs/'+val.designID+'.png" onError="'+imgsE+';" /><span> <h2>'+val.name+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5><h5>id: <b>'+val.designID+'</b></h5><p>'+val.description+'</p></span></a></li>');                      
+                      $("#projectsUser ul").append('<li><img src="http://storage.betaville.net/designthumbs/'+val.designID+'.png" onError="'+imgsE+';" /><span> <h2>'+val.name+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5><h5>id: <b>'+val.designID+'</b></h5><p>'+val.description+'</p></span><a href="../project/'+val.designID+'">View Project</a></li>');                      
                   });
 
                 }
