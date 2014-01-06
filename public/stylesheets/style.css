@@ -907,6 +907,46 @@ footer * a:hover{
 	background-color: #efefef;
 }
 
+#admin #changeForm{
+	margin-bottom: 50px;
+}
+
+#admin #changeForm input{
+	display: block;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	width: 250px;
+	height: 30px;
+	line-height: 30px;	
+}
+
+#admin #changeForm label {
+	margin-right: 10px;
+}
+
+#admin #changeForm button.btn-primary {
+  color: #ffffff;
+  background-color: #0082ee;
+  border-color: #0082ee;
+  border-radius: 0px;
+}
+
+#admin #changeForm button.btn-primary:hover,
+#admin #changeForm button.btn-primary:focus,
+#admin #changeForm button.btn-primary:active,
+#admin #changeForm button.btn-primary.active{
+  color: #4abaff !important;
+  background-color: #005cc4;
+  border-color: #005cc4;
+}
+
+#admin #changeForm button.btn-primary:active,
+#admin #changeForm button.btn-primary.active,
+#admin #changeForm button.open .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+
+
 #member.meat{
 	background-color: #efefef;
 }

@@ -21,17 +21,25 @@ block content
 
   div(id="admin", class="meat")     
     h1 Admin Dashboard
-
-
     table(id="users",class="table")
       thead
         tr
           th user name
           th user type
           th user emails
-          th approve user        
-          th number of projects                    
+          th approve user
+          th number of projects
       tbody        
+
+    h1 Change Password
+    div(id="changeForm", class="form-signin")      
+      label select user name
+      select(id="userNames")        
+      input(type="text", name="pass", class="input-block-level", placeholder="Password")
+      div(class="notice")
+      button(class="btn btn-large btn-primary") Change Password
+    
+      
 
   script(type="text/javascript")
     $(function(){  
@@ -39,6 +47,10 @@ block content
           var data = !{JSON.stringify(locals)};
           _.each(data.locals[0].data,function (val, key) {
             $("#admin #users tbody").append('<tr data-user="'+val.userName+'"><td><a href="/user/'+val.userName.trim()+'">'+val.userName+'</a></td><td><select><option value="'+val.type+'">'+val.type+'</option><option value="member">member</option><option value="moderator">moderator</option><option value="base_commiter">base_commiter</option><option value="admin">admin</option></select</td><td><a href="mailto:'+val.email+'">'+val.email+'</a></td><td><input type="checkbox" '+(val.activated=="1" ? "checked=checked" : "")+'></td><td>'+(val.designs!="0" ? val.designs : "")+'</td></tr>');
+          });
+
+          _.each(data.locals[0].data,function (val, key) {
+            $("#admin #userNames").append('<option value="'+val.userName+'">'+val.userName+'</option>');
           });
 
           $("#admin #users tbody tr td input").on("change",function(){
@@ -66,8 +78,7 @@ block content
             var userName = $(this).closest("tr").attr("data-user");
             
             $.ajax({ 
-              url: '/admin/userTypeChange/'+userName+'/'+userType,            
-              
+              url: '/admin/userTypeChange/'+userName+'/'+userType,              
               dataType: 'json', 
               success: function(data) 
               {                    
@@ -76,11 +87,29 @@ block content
               }
             });            
 
-
-
-
           });
 
+          $("#admin #changeForm button").on("click",function(){
+            var userName = $('#admin #changeForm #userNames').val();
+            var userPassword = $('#admin #changeForm input[name="pass"]').val();
+            //- alert(userName +" "+userPassword);            
+            $.ajax({ 
+              url: '/admin/userPassChange/'+userName+'/'+userPassword,              
+              dataType: 'json', 
+              success: function(data) 
+              { 
+                console.log(data);
+                if(data === true){                   
+                  alert("User "+userName+" password changed to "+userPassword)
+                }
+                else{
+                  alert("User not activated")
+                }
+
+              }
+            });            
+
+          });
 
         };
     });

@@ -83,6 +83,13 @@ userTypeChange = function(parameters, callback) {
 	this._request.executeRequest('?section=user&request=changetype', parameters, callback);
 };
 
+userPassChange = function(parameters, callback) {
+	if( parameters === undefined ) parameters = {};	
+	_request = new Request();
+	// http://localhost/Betaville-Web-Service/service.php?section=user&request=changePasswordNew&username=test4&password=test4
+	this._request.executeRequest('?section=user&request=changePasswordNew', parameters, callback);
+};
+
 userAll = function(parameters, callback) {
 	if( parameters === undefined ) parameters = {};	
 	_request = new Request();	
@@ -189,13 +196,30 @@ app.get('/admin/userTypeChange/:user/:userType', function(request, response) {
 	    	response.send(resultTypeChange.changetype);
 	    }
 	});		
-
 	// response.send(request.session.token +" "+ request.session.userName +" "+request.session.userType +" --- "+userName+" "+userType);
-
-
-
 });
 
+
+app.get('/admin/userPassChange/:user/:userPass', function(request, response) {
+	var userName = request.params.user,
+		userPass = request.params.userPass,
+		userType = request.session.userType;
+
+	if (userType != 'admin'){
+		response.send("unauthorised");
+	}
+	else{		
+		userPassChange('&username='+userName+'&password='+userPass, function(errPassChange, resultPassChange) {
+			if (errPassChange) {
+		    	console.log("ERROR:", errPassChange);
+		    	response.send(errPassChange);
+		    } else {				    		    	
+		    	console.log(resultPassChange.PassChangedNew);	    	
+		    	response.send(resultPassChange.PassChangedNew);
+		    }
+		});				
+	}
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
