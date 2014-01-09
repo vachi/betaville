@@ -965,6 +965,7 @@ footer * a:hover{
 
 #member ul a{
 	color: #ff6600;
+	margin-left: 25px;
 }
 
 #member #dashBoardHeader .btn-primary {
@@ -991,6 +992,11 @@ footer * a:hover{
 
 #member #dashBoardHeader a.btn-primary:nth-child(even){
 	border-right: 1px solid #773924 !important;
+	border-left: 1px solid #773924 !important;
+}
+
+#member #dashBoardHeader a.btn-primary:last-child{
+	border-right: none !important;
 	border-left: 1px solid #773924 !important;
 }
 
