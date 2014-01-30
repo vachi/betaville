@@ -116,7 +116,7 @@ app.get('/auth/:user/:pass', function(request, response) {
 				    	request.session.token = result.token;
 	       				request.session.userName = request.params.user;	       		
 	       				request.session.logged = 'in';
-	       				response.send(true)	       		
+	       				response.send(true)       		
 				    }
 				});	       		
 			}

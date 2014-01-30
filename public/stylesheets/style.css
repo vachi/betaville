@@ -884,10 +884,8 @@ footer * a:hover{
 #login div.notice{
 	width: 250px;
 	min-height: 28px;
-	margin: 0 5px 10px 0;
-	background-color: #fff;
-	border: 1px solid #dddddd;
-	display: none;
+	margin: 0 5px 10px 0;	
+	border: none;	
 }
 
 #login.meat img{

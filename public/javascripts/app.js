@@ -76,6 +76,9 @@ $(function(){
     
     if($('#login').length >0 ){
 
+        $('input[type="password"]').bind("enterKey",function(e){$("#loginForm button").click();});
+        $('input[type="password"]').keyup(function(e){if(e.keyCode == 13){$(this).trigger("enterKey");}});
+
         $("#loginForm button").click(function() {
             var userVal = $("input[name='user']").val();
             var passVal = $("input[name='pass']").val();
@@ -84,14 +87,12 @@ $(function(){
                 url: '/auth/'+userVal+'/'+passVal,                
                 success: function(data) 
                 {                        
-                    console.log(data);
-                    if(data == true){window.location.replace("/admin");}
+                    // console.log(data);
+                    if(data == true){window.location.replace("/admin");}                    
+                    else{$("#loginForm .notice").html("Incorrect, try Again");}                    
                 }
             });
-
         });
-
-
         
     };
 });
