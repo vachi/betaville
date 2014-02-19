@@ -1,14 +1,14 @@
 extends layout
 
-block content  
-	div(class="navbar navbar-default navbar-fixed-top")    
+block content
+	div(class="navbar navbar-default navbar-fixed-top")
 			div(class="navbar-header")
 				button(type="button", class="navbar-toggle", data-toggle="collapse", data-target=".navbar-collapse")
 					span(class="icon-bar")
 					span(class="icon-bar")
-					span(class="icon-bar")         
+					span(class="icon-bar")
 				a(href="/" class="navbar-brand") betaville
-			div(class="navbar-collapse collapse")        
+			div(class="navbar-collapse collapse")
 				ul(class="nav navbar-nav")
 					li(class="")
 						a(href="/#news") news
@@ -19,7 +19,7 @@ block content
 					li(class="")
 						a(href="/#participate") participate
 
-	div(id="admin", class="meat")     
+	div(id="admin", class="meat")
 		h1 Admin Dashboard
 		table(id="users",class="table")
 			thead
@@ -29,12 +29,12 @@ block content
 					th user emails
 					th approve user
 					th number of projects
-			tbody        
+			tbody
 
 		h1 Change Password
-		div(id="changeForm", class="form-signin")      
+		div(id="changeForm", class="form-signin")
 			label select user name
-			select(id="userNames")        
+			select(id="userNames")
 			input(type="text", name="pass", class="input-block-level", placeholder="Password")
 			div(class="notice")
 			button(class="btn btn-large btn-primary") Change Password
@@ -58,51 +58,51 @@ block content
 							console.log("checked");
 						}
 						else{
-							var userName = $(this).parents("tr").attr("data-user");              
+							var userName = $(this).parents("tr").attr("data-user");
 							console.log($(this).parents("tr").attr("data-user") + " unchecked");
-							$.ajax({ 
-									url: 'http://5.9.20.212/service/service.php?',            
-									data: 'section=user&request=activateuserByName&user='+userName, 
+							$.ajax({
+									url: 'http://5.9.20.212/service/service.php?',
+									data: 'section=user&request=activateuserByName&user='+userName,
 									dataType: 'json', 
-									success: function(data) 
-									{                    
-										console.log(userName +" activated");                   
+									success: function(data)
+									{
+										console.log(userName +" activated");
 									}
 							});
 
 						}
-					});          
+					});
 
 					$("#admin #users tbody tr td select").on("change",function(){
 						var userType = $(this).val();
 						var userName = $(this).closest("tr").attr("data-user");
 						
 						$.ajax({ 
-							url: '/admin/userTypeChange/'+userName+'/'+userType,              
-							dataType: 'json', 
-							success: function(data) 
-							{                    
+							url: '/admin/userTypeChange/'+userName+'/'+userType,
+							dataType: 'json',
+							success: function(data)
+							{
 								alert("User "+userName+" type changed to "+userType)
 
 							}
-						});            
+						});
 
 					});
 
 					$('input[name="pass"]').bind("enterKey",function(e){$("#admin #changeForm button").click();});
 					$('input[name="pass"]').keyup(function(e){if(e.keyCode == 13){$(this).trigger("enterKey");}});
 
-					$("#admin #changeForm button").on("click",function(){						
+					$("#admin #changeForm button").on("click",function(){
 						var userName = $('#admin #changeForm #userNames').val();
 						var userPassword = $('#admin #changeForm input[name="pass"]').val();
 						//- alert(userName +" "+userPassword);            
 						$.ajax({ 
-							url: '/admin/userPassChange/'+userName+'/'+userPassword,              
-							dataType: 'json', 
-							success: function(data) 
+							url: '/admin/userPassChange/'+userName+'/'+userPassword,
+							dataType: 'json',
+							success: function(data)
 							{ 
 								console.log(data);
-								if(data === true){                   
+								if(data === true){
 									$(".notice").html("User "+userName+" password changed to "+userPassword);
 								}
 								else{
@@ -110,7 +110,7 @@ block content
 								}
 
 							}
-						});            
+						});
 
 					});
 

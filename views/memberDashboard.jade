@@ -1,14 +1,14 @@
 extends layout
 
 block content  
-  div(class="navbar navbar-default navbar-fixed-top")    
+  div(class="navbar navbar-default navbar-fixed-top")
       div(class="navbar-header")
         button(type="button", class="navbar-toggle", data-toggle="collapse", data-target=".navbar-collapse")
           span(class="icon-bar")
           span(class="icon-bar")
-          span(class="icon-bar")         
+          span(class="icon-bar")
         a(href="/" class="navbar-brand") betaville
-      div(class="navbar-collapse collapse")        
+      div(class="navbar-collapse collapse")
         ul(class="nav navbar-nav")
           li(class="")
             a(href="/#news") news
@@ -19,7 +19,7 @@ block content
           li(class="")
             a(href="/#participate") participate
 
-  div(id="member", class="meat")     
+  div(id="member", class="meat")
     h1(class="userName") <img src="">
     span(id="dashBoardHeader")
       a(class="btn btn-primary btn-large projects", href="#projects") pojects 
@@ -32,23 +32,23 @@ block content
 
 
   script.
-    $(function(){  
-        if($('#member').length >0 ){            
+    $(function(){
+        if($('#member').length >0 ){
             var pathArray = window.location.pathname.split( '/' ),
                 userName = pathArray[1],
                 imgsE = "this.onerror=null;this.src='/images/sorry.gif'";
-            $.ajax({ 
-                url: 'http://5.9.20.212/service/service.php?',            
+            $.ajax({
+                url: 'http://5.9.20.212/service/service.php?',
                 data: 'section=user&request=getpublicinfo&username='+userName, 
-                dataType: 'json', 
-                success: function(data) 
+                dataType: 'json',
+                success: function(data)
                 {
                   console.log(data);
                   if (data.userInfo.displayName !== null){
                     $(".userName").append(data.userInfo.displayName);
                   }
                   else{
-                   $(".userName").append(data.userInfo.userName); 
+                   $(".userName").append(data.userInfo.userName);
                   }
                   if (data.userInfo.avatar !== null){
                     $(".userName img").attr("src",data.userInfo.avatar);
@@ -56,14 +56,14 @@ block content
                 }
             });
 
-            $.ajax({ 
-                url: 'http://5.9.20.212/service/service.php?',            
-                data: 'section=design&request=findbyuser&excludeempty=1&user='+userName, 
-                dataType: 'json', 
-                success: function(data) 
+            $.ajax({
+                url: 'http://5.9.20.212/service/service.php?',
+                data: 'section=design&request=findbyuser&excludeempty=1&user='+userName,
+                dataType: 'json',
+                success: function(data)
                 {
                   console.log(data);
-                  _.each(data.designs,function (val, key) {                      
+                  _.each(data.designs,function (val, key) {
                       $("#projects ul").append('<li><a href="./project/'+val.designID+'"><img src="http://storage.betaville.net/designthumbs/'+val.designID+'.png" onError="'+imgsE+';" /><span> <h2>'+val.name+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5><h5>id: <b>'+val.designID+'</b></h5><p>'+val.description+'</p></span></a></li>');
                   });
 

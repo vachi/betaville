@@ -1,14 +1,14 @@
 extends layout
 
-block content  
-	div(class="navbar navbar-default navbar-fixed-top")    
+block content
+	div(class="navbar navbar-default navbar-fixed-top")
 			div(class="navbar-header")
 				button(type="button", class="navbar-toggle", data-toggle="collapse", data-target=".navbar-collapse")
 					span(class="icon-bar")
 					span(class="icon-bar")
-					span(class="icon-bar")         
+					span(class="icon-bar")
 				a(href="/" class="navbar-brand") betaville
-			div(class="navbar-collapse collapse")        
+			div(class="navbar-collapse collapse")
 				ul(class="nav navbar-nav")
 					li(class="")
 						a(href="/#news") news
@@ -19,10 +19,10 @@ block content
 					li(class="")
 						a(href="/#participate") participate
 
-	div(id="member", class="meat")     
-		h1(class="userName") <img src=""> 
+	div(id="member", class="meat")
+		h1(class="userName") <img src="">
 		span(id="dashBoardHeader")
-			a(class="btn btn-primary btn-large projects", href="#projects") projects 
+			a(class="btn btn-primary btn-large projects", href="#projects") projects
 			a(class="btn btn-primary btn-large comments", href="#comments") comments
 			//- a(class="btn btn-primary btn-large users", href="#users") search users
 
@@ -43,10 +43,10 @@ block content
 								userName = pathArray[2],
 								imgsE = "this.onerror=null;this.src='/images/sorry.gif'";
 						$.ajax({ 
-								url: 'http://5.9.20.212/service/service.php?',            
-								data: 'section=user&request=getpublicinfo&username='+userName, 
-								dataType: 'json', 
-								success: function(data) 
+								url: 'http://5.9.20.212/service/service.php?',
+								data: 'section=user&request=getpublicinfo&username='+userName,
+								dataType: 'json',
+								success: function(data)
 								{
 									console.log(data);
 									if(data.userInfo==null){
@@ -58,7 +58,7 @@ block content
 											$(".userName").append(data.userInfo.displayName);
 										}
 										else{
-											$(".userName").append(data.userInfo.userName); 
+											$(".userName").append(data.userInfo.userName);
 										}
 										if (data.userInfo.avatar !== null){
 											$(".userName img").attr("src",data.userInfo.avatar);
@@ -66,10 +66,10 @@ block content
 										
 									}
 								}
-						});            
-						$.ajax({ 
-								url: 'http://5.9.20.212/service/service.php?',            
-								data: 'section=design&request=findbyuser&excludeempty=1&user='+userName, 
+						});
+						$.ajax({
+								url: 'http://5.9.20.212/service/service.php?',
+								data: 'section=design&request=findbyuser&excludeempty=1&user='+userName,
 								dataType: 'json', 
 								success: function(data) 
 								{
@@ -82,14 +82,14 @@ block content
 						});
 
 						$.ajax({ 
-								url: 'http://5.9.20.212/service/service.php?',            
+								url: 'http://5.9.20.212/service/service.php?',
 								data: 'section=activity&request=myactivity&user='+userName, 
 								dataType: 'json', 
 								success: function(data) 
 								{
 									console.log(data);
 									_.each(data.comments,function (val, key) {                      
-											$("#comments ul").append('<li><a href="../project/'+val.designid+'"><h2>'+val.comment+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5></a></li>');                      
+											$("#comments ul").append('<li><a href="../project/'+val.designid+'"><h2>'+val.comment+'</h2><h5>author: <b>'+val.user+'</b></h5><h5>created: <b>'+val.date+'</b></h5></a></li>');
 									});
 
 								}
